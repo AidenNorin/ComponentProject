@@ -6,8 +6,6 @@
 
 ## Assignment Overview
 
-<!-- TODO: read the assignment overview then delete this comment -->
-
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
 implement, but your component must fit within the constraints of our software
@@ -28,8 +26,6 @@ detailed feedback, which may help you decide which component to ultimately
 implement.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,15 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+My current aspiration is to go into datascience. I find the field of datascience to be very interesting as data can be used in many different ways to gain information about thhe world around us, and how to best make decisions going forwards. As for my hobbies, I'm a huge fan of flying FPV drones, and playing fighing games like Street Fighter and Guilty Gear.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -142,8 +126,6 @@ list-like components that have different ways of manipulating the data. Think
 about different ways you might allow a client to manipulate your component.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -211,26 +193,50 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `Triangle`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component would attempt to model a created triangle by being given
+      three vertices. This component would be able to give the area of the
+      triangle, and weather or not it is an equilateral, acute, obtuse or right
+      triangle. This component will store each vertex in a double[]. Hopefully
+      allowing for the creation of both 2D or 3D triangles.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addVertex(double[] coordinates)`: adds a new vertex to `this`.
+    - `double[] removeVertex(double[] coordinates)`: removes the vertex found at `coordinates` from `this`.
+    - `double[] removeAnyVertex()`: removes an arbitrary vertex from `this`.
+    - `int numVertices()`: returns the number of vertices found in `this`.
+    - `double angleDegrees(Triangle vertex)`: returns the angle between `this` and `vertex` in degrees.
+    - `double angleRadians(Triangle vertex)`: returns the angle between `this` and `vertex` in radians.
+    - `double getVertexCoordinates(int vertex)`: returns the coordinates of the vertex in `this` correlating with `vertex`.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `String triangleType()`: returns whether `this` is acute, obtuse, right, or equilateral in the form of a string.
+    - `boolean isAcute()`: returns true if `this` is acute, else false.
+    - `boolean isObtuse()`: returns true if `this` is obtuse, else false.
+    - `boolean isRight()`: returns true if `this` is right, else false.
+    - `boolean isEquilateral()`: returns true if `this` is equilateral, else false.
+    - `double area()`: returns the area of triangle `this`.
+    - `double perimeter()`: returns the perimeter of triangle `this`.
+    - `double edgeLength(int vertex1, int vertex2)`: returns the length of the edge formed between vertices `vertex1`, and `vertex2`, corresponding to vertices stored in `this`.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would need to be mutable for the design of the
+        functions listed above to work. Many functions listed above will
+        mutate `this`.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I believe so, currently, I have the component defined to not require an
+        internal class, but having an internal `Triangle.Vertex` class would
+        make working with each vertex much easier.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the constant `PI` would be incredibly useful, though I could also
+        just use `Math.PI` to be able to access the value of pi.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, for example, I would be able to implement the `isAcute()` function
+        by checking if all three angles in `this` are less than 90 degrees by
+        using `angleDegrees()`.
 
 - Component Design #2: <!-- TODO: give component a name then delete this comment -->
   - **Description**:
