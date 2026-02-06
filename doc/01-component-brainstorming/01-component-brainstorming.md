@@ -238,47 +238,92 @@ will likely refine your design to make your implementation easier to use.
         by checking if all three angles in `this` are less than 90 degrees by
         using `angleDegrees()`.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `Data Table`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - creates a table of statistics that will be able to be analyzed to gain
+      information about the data collected. Information on a linear regression
+      for the data points, the minimum values, maximum values, standard deviation,
+      mean value, t-values or z-values, and the R-squared. I may be forgetting a
+      few key components of what might be added, but this is still a good start.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addPoint(double x, double y)`: adds a statistic to `this` with values `x` and `y`.
+    - `void labelX(String label)`: labels the `x` axis of `this`.
+    - `void labelY(String label)`: labels the `y` axis of `this`.
+    - `String getLabelX()`: returns the label given to `x` in `this`.
+    - `String getLabelY()`: returns the label given to `y` in `this`.
+    - `double[] getXValues()`: returns an array containing the values of `x` in `this`.
+    - `double[] getYValues()`: returns an array containing the values of `y` in `this`.
+    - `double[] removePoint(double x, double y)`: removes the statistic in `this` with values `x` and `y`.
+    - `void generatePoints(String file)`: generates points to be entered into `this` from a given .txt file. possibly also a .xml file.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `double linearRegressionSlope()`: returns the slope of the linear regression for the points in `this`.
+    - `double linearRegressionYIntercept()`: returns the y-intercept of the linear regression for the points in `this`.
+    - `double meanX()`: returns the mean for the x values found in `this`.
+    - `double meanY()`: returns the mean for the y values found in `this`.
+    - `double standardDeviationX()`: returns the standard deviation for the x values found in `this`.
+    - `double standardDeviationY()`: returns the standard deviation for the y values found in `this`.
+    - `double minimumValueX()`: returns the minimum value of the x values found in `this`.
+    - `double minimumValueY()`: returns the minimum value of the y values found in `this`.
+    - `double maximumValueX()`: returns the minimum value of the x values found in `this`.
+    - `double maximumValueY()`: returns the minimum value of the y values found in `this`.
+    - `double tValueX()`: returns the t-value for the x values found in `this`.
+    - `double tValueY()`: returns the t-value for the y values found in `this`.
+    - `double zValueX()`: returns the z-value for the x values found in `this`.
+    - `double zValueY()`: returns the z-value for the y values found in `this`.
+    - `double rSquared()`: returns the R^2 for the points in `this`.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, making this component mutable would make the implementation of this
+        component much easier and more intuitive to use. Functions like
+        `addPoint()`, `labelX()`, `labelY()`, and `generatePoints()` would all
+        mutate `this` in their own ways.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes? I think I would need to store the labels for the data table in their
+        own variable. Though I'm not sure as I feel like I should be able to create
+        a way to store the labels without the use of an internal class.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Could possibly need to enumerate the corresponding p-values to t-values
+        and z-values, though I assume I could also simply calculate for these
+        instead.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, for example, the `meanX()` function could be implemented by finding
+        the average of the array returned by `getXValues()`.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `Projectile`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Describes the motion of a projectile after it has been launched given
+      an escape velocity and a launch angle.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void defineLaunchVelocity(double velocity)`: sets the launch velocity of the object described by `this`.
+    - `void defineLaunchAngle(double angle)`: sets the launch angle with respect to the horizontal of `this`.
+    - `double launchVelocity()`: returns the launch velocity of the object described by `this`.
+    - `double launchAngle()`: returns the launch angle of the object described by `this`.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `double getHorizontalVelocity()`: returns the horizontal velocity of the object described by `this`.
+    - `double getInitialVerticalVelocity()`: returns the initial vertical velocity of the object described by `this`.
+    - `double distanceTraveled()`: returns the distance that the object described by `this` traveled horizontally after being launched.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the functions defined above like `defineLaunchVelocity(double velocity)`
+        would have to mutate `this` in order to work.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, this component would be fairly simple, and wouldn't need any
+        internal classes in order to function propperly.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, there would need to be a constant for gravity to be defined as 9.81
+        to allow for easier calculations.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the function `getHorizontalVelocity()` would make use of the
+        `launchVelocity()` function to determine how fast the object described
+        by this was moving horizontally after being launched.
 
 ## Post-Assignment
 
@@ -286,8 +331,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
