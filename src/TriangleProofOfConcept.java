@@ -133,21 +133,6 @@ public class TriangleProofOfConcept {
         return triangleArea;
     }
 
-    @Override
-    public String toString() {
-        String str = "[";
-
-        for (int i = 0; i < this.vertices.length; i++) {
-            if (i != this.vertices.length - 1) {
-                str += this.vertices[i] + ", ";
-            } else {
-                str += this.vertices[i] + "]";
-            }
-        }
-
-        return str;
-    }
-
     /**
      * constant for 7.
      */
@@ -171,7 +156,14 @@ public class TriangleProofOfConcept {
         tri.addVertice(vertice2);
         tri.addVertice(vertice3);
 
-        System.out.println(tri);
+        System.out.print("[");
+        for (int i = 0; i < tri.vertices.length; i++) {
+            if (i != tri.vertices.length - 1) {
+                System.out.print(tri.vertices[i] + ", ");
+            } else {
+                System.out.println(tri.vertices[i] + "]");
+            }
+        }
 
         double area = tri.area();
 
