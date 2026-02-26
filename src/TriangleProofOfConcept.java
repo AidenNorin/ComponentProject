@@ -105,6 +105,34 @@ public class TriangleProofOfConcept {
         return vertice;
     }
 
+    /**
+     * Returns the coordinates of the vertice corresponding to the given index.
+     *
+     * index = 0, corresponds to vertice 1.
+     *
+     * index = 1, corresponds to vertice 2.
+     *
+     * index = 2, corresponds to vertice 3.
+     *
+     * @param index
+     *            The number corresponding to the specific vertice.
+     *
+     * @return The corresponding vertice to the {@code index}
+     */
+    public double[] getVertice(int index) {
+        double[] vertice = new double[this.dimensions];
+
+        int counter = 0;
+
+        for (int i = index * this.dimensions; i < index
+                * this.vertices.length; i++) {
+            vertice[counter] = this.vertices[i];
+            counter++;
+        }
+
+        return vertice;
+    }
+
     // Secondary methods
 
     /**
