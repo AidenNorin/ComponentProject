@@ -76,19 +76,11 @@ public class TriangleProofOfConcept {
         assert this.numVertices < this.three : "Violation of: triangle has"
                 + "less than 3 vertices";
 
-        this.numVertices++;
-
-        boolean vertIsEmpty = true;
-        for (int i = 0; i < this.vertices.length; i += this.dimensions) {
-            for (int j = i; j < i + this.dimensions; j++) {
-                if (vertIsEmpty && this.vertices[j] != 0.0) {
-                    vertIsEmpty = false;
-                }
-                if (!vertIsEmpty) {
-                    this.vertices[j] = coordinates[j - this.dimensions];
-                }
-            }
+        for (int i = 0; i < this.dimensions; i++) {
+            this.vertices[i
+                    + (this.numVertices * this.dimensions)] = coordinates[i];
         }
+        this.numVertices++;
     }
 
     /**
@@ -127,7 +119,7 @@ public class TriangleProofOfConcept {
 
         double determinant = 0.0;
 
-        for (int i = 0; i < this.dimensions; i++) {
+        for (int i = 0; i < this.three; i++) {
             determinant += (this.vertices[i]
                     * this.vertices[i + this.dimensions + 1])
                     - this.vertices[Math.floorMod(this.three - (i * 2),
@@ -139,6 +131,21 @@ public class TriangleProofOfConcept {
 
         triangleArea = this.half * determinant;
         return triangleArea;
+    }
+
+    @Override
+    public String toString() {
+        String str = "[";
+
+        for (int i = 0; i < this.vertices.length; i++) {
+            if (i != this.vertices.length - 1) {
+                str += this.vertices[i] + ", ";
+            } else {
+                str += this.vertices[i] + "]";
+            }
+        }
+
+        return str;
     }
 
     /**
@@ -159,7 +166,11 @@ public class TriangleProofOfConcept {
         tri.addVertice(vertice2);
         tri.addVertice(vertice3);
 
-        System.out.println(tri.area());
+        System.out.println(tri);
+
+        double area = tri.area();
+
+        System.out.println(area);
 
     }
 
