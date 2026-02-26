@@ -18,9 +18,16 @@ the following form: YYYY.0M.0D.
 
 ### [Added]
 
+- Wrote description of intent for component proof of concept in `02-component-proof-of-concept.md`
+
 - Created proof of concept class for `Triangle` component
 - Implemented constructor and `createNewRep(int dimensions)`
 - Implemented `addVertice(double[] coordingates)`
 - Implemented `removeAnyVertice()`
 - Implemented `area()`
 - Wrote a working demo of `area()` in the `main()` function
+
+### [Updated]
+
+- Minor changes to `01-compoent-brainstorming` by updating goal of `triangle` component
+    to ideally function in any number of dimensions greater than or equal to 2.
