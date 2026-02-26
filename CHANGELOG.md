@@ -13,3 +13,14 @@ the following form: YYYY.0M.0D.
 - Designed a `Triangle` component
 - Designed a `Data Table` component
 - Designed a `Projectile` component
+
+## [2026.02.26]
+
+### [Added]
+
+- Created proof of concept class for `Triangle` component
+- Implemented constructor and `createNewRep(int dimensions)`
+- Implemented `addVertice(double[] coordingates)`
+- Implemented `removeAnyVertice()`
+- Implemented `area()`
+- Wrote a working demo of `area()` in the `main()` function
