@@ -149,6 +149,11 @@ public class TriangleProofOfConcept {
     }
 
     /**
+     * constant for 7.
+     */
+    private final double seven = 7.0;
+
+    /**
      * The main method.
      *
      * @param args
@@ -158,8 +163,8 @@ public class TriangleProofOfConcept {
 
         TriangleProofOfConcept tri = new TriangleProofOfConcept(2);
 
-        double[] vertice1 = { 7.0, 1.0 };
-        double[] vertice2 = { 1.0, 7.0 };
+        double[] vertice1 = { tri.seven, 1.0 };
+        double[] vertice2 = { 1.0, tri.seven };
         double[] vertice3 = { 1.0, 1.0 };
 
         tri.addVertice(vertice1);
