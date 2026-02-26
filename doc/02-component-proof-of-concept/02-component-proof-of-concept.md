@@ -111,7 +111,8 @@ for choosing this design project over the other two designs are:
    1. It was the first idea I had, and was the one I thought about the most.
    2. I believe it is the design that could have the most amount of use,
       especially given the possibility that I could transform this design
-      into being about geometry in general.
+      into being about geometry in general. Or to be about triangles in
+      higher dimensions.
    3. It will give me a good amount of practice using the skills I'm learning
       in Linear Algebra at the moment especially when finding the area of a
       triangle.
@@ -124,8 +125,6 @@ for choosing this design project over the other two designs are:
 > VSCode to run git commands. It's entirely up to you. Regardless of your choice,
 > we'll want a branch that you can later make a pull request from with all
 > your changes.
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
