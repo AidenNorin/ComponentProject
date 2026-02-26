@@ -11,6 +11,12 @@ public class TriangleProofOfConcept {
     private final int three = 3;
 
     /**
+     * constant reused in many equations for triangles due to the area of a
+     * parallelogram divided by 2 results in the area of the resulting triangle.
+     */
+    private final double half = 0.5;
+
+    /**
      * holds the locations of the vertices of the triangle in {@code this}.
      *
      * vertex 1 = vertices[0 through (dimensions/3)-1]
@@ -107,6 +113,34 @@ public class TriangleProofOfConcept {
         return vertice;
     }
 
+    // Secondary methods
+
+    /**
+     * Finds and returns the area of the triangle in {@code this}. Curretly only
+     * proved to work for matricies and triangles in 2 dimensions.
+     *
+     * @return The area of the triangle in {@code this}
+     */
+    public double area() {
+
+        double triangleArea = 0.0;
+
+        double determinant = 0.0;
+
+        for (int i = 0; i < this.dimensions; i++) {
+            determinant += (this.vertices[i]
+                    * this.vertices[i + this.dimensions + 1])
+                    - this.vertices[Math.floorMod(this.three - (i * 2),
+                            this.vertices.length)]
+                            * this.vertices[Math.floorMod(
+                                    this.three - (i * 2) + 1,
+                                    this.vertices.length)];
+        }
+
+        triangleArea = this.half * determinant;
+        return triangleArea;
+    }
+
     /**
      * The main method.
      *
@@ -115,7 +149,17 @@ public class TriangleProofOfConcept {
      */
     public static void main(String[] args) {
 
-        System.out.println("Hello World!");
+        TriangleProofOfConcept tri = new TriangleProofOfConcept(2);
+
+        double[] vertice1 = { 7.0, 1.0 };
+        double[] vertice2 = { 1.0, 7.0 };
+        double[] vertice3 = { 1.0, 1.0 };
+
+        tri.addVertice(vertice1);
+        tri.addVertice(vertice2);
+        tri.addVertice(vertice3);
+
+        System.out.println(tri.area());
 
     }
 
