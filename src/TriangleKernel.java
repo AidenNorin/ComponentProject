@@ -36,7 +36,8 @@ public interface TriangleKernel extends Standard<Triangle> {
     double[] removeAnyVertice();
 
     /**
-     * removes a specific vertice from {@code vertices} in {@code this}.
+     * removes a specific vertice from {@code vertices} in {@code this}
+     * cooresponding to the index given from {@code vertice}.
      *
      * @param vertice
      *            integer corresponding to the vertice to be removed.
