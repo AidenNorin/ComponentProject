@@ -18,8 +18,6 @@ public interface TriangleKernel extends Standard<Triangle> {
      */
     double HALF = 0.5;
 
-    // Kernel Methods
-
     /**
      * adds a vertice to {@code vertices}.
      *
@@ -55,7 +53,6 @@ public interface TriangleKernel extends Standard<Triangle> {
     /**
      * Returns the coordinates of the vertice corresponding to the given
      * index.
-     *
      * index = 0, corresponds to vertice 1.
      *
      * index = 1, corresponds to vertice 2.
