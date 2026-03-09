@@ -8,7 +8,8 @@ import components.standard.Standard;
 public interface TriangleKernel extends Standard<Triangle> {
 
     /**
-     * constant to suppress magic number waring that drives me crazy.
+     * constant to equal to 3, as the number three is incredibly useful when
+     * working with triangles.
      */
     int THREE = 3;
 
@@ -19,26 +20,27 @@ public interface TriangleKernel extends Standard<Triangle> {
     double HALF = 0.5;
 
     /**
-     * adds a vertice to {@code vertices}.
+     * adds a vertice to {@code vertices} in {@code this}.
      *
      * @param coordinates
-     *            coordinates of vertice to be added to {@code vertices}
+     *            coordinates of vertice to be added to {@code vertices} in
+     *            {@code this}.
      */
     void addVertice(double[] coordinates);
 
     /**
-     * Removes an arbitrary vertice from {@code vertices}.
+     * Removes an arbitrary vertice from {@code vertices} in {@code this}.
      *
-     * @return The removed vertice from {@code vertices}
+     * @return The removed vertice from {@code vertices} in {@code this}
      */
     double[] removeAnyVertice();
 
     /**
-     * removes a specific vertice from {@code vertices}.
+     * removes a specific vertice from {@code vertices} in {@code this}.
      *
      * @param vertice
      *            integer corresponding to the vertice to be removed.
-     * @return the coordinates of the removed {@code vertice}
+     * @return the coordinates of the removed {@code vertice} in {@code this}
      *
      */
     double[] removeVertice(int vertice);
@@ -51,13 +53,13 @@ public interface TriangleKernel extends Standard<Triangle> {
     int numVertices();
 
     /**
-     * Returns the coordinates of the vertice corresponding to the given
-     * index.
-     * index = 0, corresponds to vertice 1.
+     * Returns the coordinates of the vertice corresponding to the given index.
      *
-     * index = 1, corresponds to vertice 2.
+     * index = 0, corresponds to the first defined vertice.
      *
-     * index = 2, corresponds to vertice 3.
+     * index = 1, corresponds to the second defined vertice.
+     *
+     * index = 2, corresponds to the third defined vertice.
      *
      * @param index
      *            The number corresponding to the specific vertice.
