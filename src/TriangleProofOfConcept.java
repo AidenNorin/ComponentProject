@@ -70,7 +70,7 @@ public class TriangleProofOfConcept {
      *            coordinates of vertice to be added to {@code vertices}
      */
     public void addVertice(double[] coordinates) {
-        assert this.dimensions != coordinates.length
+        assert this.dimensions == coordinates.length
                 / this.three : "Violation of: dimensions of coordinates,"
                         + "and this.dimensions are equal";
         assert this.numVertices < this.three : "Violation of: triangle has"
