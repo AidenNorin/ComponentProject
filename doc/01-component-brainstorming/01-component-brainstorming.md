@@ -199,7 +199,8 @@ will likely refine your design to make your implementation easier to use.
       three vertices. This component would be able to give the area of the
       triangle, and weather or not it is an equilateral, acute, obtuse or right
       triangle. This component will store each vertex in a double[]. Hopefully
-      allowing for the creation of both 2D or 3D triangles.
+      allowing for the creation of both any number of dimensions which triangles
+      are able to be made.
   - **Kernel Methods**:
     - `void addVertex(double[] coordinates)`: adds a new vertex to `this`.
     - `double[] removeVertex(double[] coordinates)`: removes the vertex found at `coordinates` from `this`.
