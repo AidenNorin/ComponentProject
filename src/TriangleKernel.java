@@ -1,26 +1,28 @@
 import components.standard.Standard;
 
 /**
- * TriangleKernel implementation.
+ * Interface for TriangleKernel.
  *
  * @author Aiden Norin
  */
 public interface TriangleKernel extends Standard<Triangle> {
 
     /**
-     * constant to equal to 3, as the number three is incredibly useful when
+     * Constant to equal to 3, as the number three is incredibly useful when
      * working with triangles.
      */
     int THREE = 3;
 
     /**
-     * constant reused in many equations for triangles due to the area of a
+     * Constant reused in many equations for triangles due to the area of a
      * parallelogram divided by 2 results in the area of the resulting triangle.
      */
     double HALF = 0.5;
 
     /**
-     * adds a vertice to {@code vertices} in {@code this}.
+     * Adds a vertice to {@code vertices} in {@code this}.
+     *
+     * @requires numVertices <= 3.
      *
      * @param coordinates
      *            coordinates of vertice to be added to {@code vertices} in
@@ -31,17 +33,22 @@ public interface TriangleKernel extends Standard<Triangle> {
     /**
      * Removes an arbitrary vertice from {@code vertices} in {@code this}.
      *
-     * @return The removed vertice from {@code vertices} in {@code this}
+     * @requires numVertices > 0.
+     *
+     * @return The removed vertice from {@code vertices} in {@code this}.
      */
     double[] removeAnyVertice();
 
     /**
-     * removes a specific vertice from {@code vertices} in {@code this}
+     * Removes a specific vertice from {@code vertices} in {@code this}
      * cooresponding to the index given from {@code vertice}.
      *
+     * @requires numVertices > 0
+     *
      * @param vertice
-     *            integer corresponding to the vertice to be removed.
-     * @return the coordinates of the removed {@code vertice} in {@code this}
+     *            {@code int} corresponding to the vertice to be removed.
+     *
+     * @return the coordinates of the removed {@code vertice} in {@code this}.
      *
      */
     double[] removeVertice(int vertice);
@@ -49,7 +56,9 @@ public interface TriangleKernel extends Standard<Triangle> {
     /**
      * The number of vertices defined in the {@code this}.
      *
-     * @return number of vertices in {@code this}
+     * @ensures 0 <= numVertices <= 3.
+     *
+     * @return number of vertices in {@code this}.
      */
     int numVertices();
 
@@ -63,9 +72,9 @@ public interface TriangleKernel extends Standard<Triangle> {
      * index = 2, corresponds to the third defined vertice.
      *
      * @param index
-     *            The number corresponding to the specific vertice.
+     *            {@code} corresponding to the specific vertice.
      *
-     * @return The corresponding vertice to the {@code index}
+     * @return The corresponding vertice to the {@code index}.
      */
     double[] getVertice(int index);
 }
