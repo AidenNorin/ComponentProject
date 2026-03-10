@@ -12,13 +12,45 @@ public interface Triangle extends TriangleKernel {
     double area();
 
     /**
+     * Gives the angle between two vertices in the triangle described by
+     * {@code this} (with respect to the third vertice) in degrees.
+     *
+     * @param vertice1
+     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *
+     * @param vertice2
+     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *
+     * @return
+     *      the angle between {@code vertice1}, and {@code vertice2} in degrees.
+     */
+    double angleDegrees(int vertice1, int vertice2);
+
+    /**
+     * Gives the angle between two vertices in the triangle described by
+     * {@code this} (with respect to the third vertice) in radians.
+     *
+     * @param vertice1
+     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *
+     * @param vertice2
+     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *
+     * @return
+     *      the angle between {@code vertice1}, and {@code vertice2} in radians.
+     */
+    double angleRadians(int vertice1, int vertice2);
+
+    /**
      * Determines if the triangle described by {@code this} is an acute triangle.
      *
      * @requires No two {@code vertice} in {@code this} should share the same
      *           coordinates.
      *
+     *
      * @return {@code true} if {@code this} is an acute triangle, and false
      *         otherwise.
+     *
      */
     boolean isAcute();
 
@@ -42,10 +74,10 @@ public interface Triangle extends TriangleKernel {
      * @return {@code true} if {@code this} is a right triangle, and false
      *         otherwise.
      */
-    boolean isRight();
+     boolean isRight();
 
     /**
-     * Determines if the triangle described by {@code this} is an equilateral triangle.
+     * Determines if the triangle described by {@code this} is an equilaterl triangle.
      *
      * @requires No two {@code vertice} in {@code this} should share the same
      *           coordinates.
