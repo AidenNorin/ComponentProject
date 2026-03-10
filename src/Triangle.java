@@ -126,4 +126,15 @@ public interface Triangle extends TriangleKernel {
      */
     double edgeLength(int vertice1, int vertice2);
 
+    /**
+     * Gives the perimeter of the triangle described by {@code this}.
+     *
+     * @ensures
+     *      perimeter = edgeLength(0, 1) + edgeLength(1, 2) + edgeLength(2, 0).
+     *
+     * @return
+     *      perimeter of the triangle described by {@code this}.
+     */
+    double perimeter();
+
 }
