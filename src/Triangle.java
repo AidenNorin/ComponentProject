@@ -1,28 +1,22 @@
 /**
- * Triangles (woah).
+ * Enhanced interface for the {@code Triangle} component.
  */
 public interface Triangle extends TriangleKernel {
-
-    /**
-     * Finds and returns the area of the triangle in {@code this}. Curretly only
-     * proved to work for matricies and triangles in 2 dimensions.
-     *
-     * @return The area of the triangle in {@code this}
-     */
-    double area();
 
     /**
      * Gives the angle between two vertices in the triangle described by
      * {@code this} (with respect to the third vertice) in degrees.
      *
      * @param vertice1
-     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *            {@code int} cooresponding to a {@code vertice} in
+     *            {@code this}.
      *
      * @param vertice2
-     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *            {@code int} cooresponding to a {@code vertice} in
+     *            {@code this}.
      *
-     * @return
-     *      the angle between {@code vertice1}, and {@code vertice2} in degrees.
+     * @return the angle between {@code vertice1}, and {@code vertice2} in
+     *         degrees.
      */
     double angleDegrees(int vertice1, int vertice2);
 
@@ -31,31 +25,33 @@ public interface Triangle extends TriangleKernel {
      * {@code this} (with respect to the third vertice) in radians.
      *
      * @param vertice1
-     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *            {@code int} cooresponding to a {@code vertice} in
+     *            {@code this}.
      *
      * @param vertice2
-     *      {@code int} cooresponding to a {@code vertice} in {@code this}.
+     *            {@code int} cooresponding to a {@code vertice} in
+     *            {@code this}.
      *
-     * @return
-     *      the angle between {@code vertice1}, and {@code vertice2} in radians.
+     * @return the angle between {@code vertice1}, and {@code vertice2} in
+     *         radians.
      */
     double angleRadians(int vertice1, int vertice2);
 
     /**
-     * Determines if the triangle described by {@code this} is an acute triangle.
+     * Determines if the triangle described by {@code this} is an acute
+     * triangle.
      *
      * @requires No two {@code vertice} in {@code this} should share the same
      *           coordinates.
      *
-     *
      * @return {@code true} if {@code this} is an acute triangle, and false
      *         otherwise.
-     *
      */
     boolean isAcute();
 
     /**
-     * Determines if the triangle described by {@code this} is an obtuse triangle.
+     * Determines if the triangle described by {@code this} is an obtuse
+     * triangle.
      *
      * @requires No two {@code vertice} in {@code this} should share the same
      *           coordinates.
@@ -74,16 +70,17 @@ public interface Triangle extends TriangleKernel {
      * @return {@code true} if {@code this} is a right triangle, and false
      *         otherwise.
      */
-     boolean isRight();
+    boolean isRight();
 
     /**
-     * Determines if the triangle described by {@code this} is an equilaterl triangle.
+     * Determines if the triangle described by {@code this} is an equilaterl
+     * triangle.
      *
      * @requires No two {@code vertice} in {@code this} should share the same
      *           coordinates.
      *
-     * @return {@code true} if {@code this} is an equilateral triangle, and false
-     *         otherwise.
+     * @return {@code true} if {@code this} is an equilateral triangle, and
+     *         false otherwise.
      */
     boolean isEquilateral();
 
@@ -104,5 +101,29 @@ public interface Triangle extends TriangleKernel {
      *         {@code this} is.
      */
     String triangleType();
+
+    /**
+     * Gives the area of the triangle described by {@code this}.
+     *
+     * @return The area of the triangle described by {@code this}.
+     */
+    double area();
+
+    /**
+     * Gives the length of the edge of the triangle described by {@code this}
+     * between {@code vertice1} and {@code vertice2}.
+     *
+     * @param vertice1
+     *            {@code int} cooresponding to a {@code vertice} in
+     *            {@code this}.
+     *
+     * @param vertice2
+     *            {@code int} cooresponding to a {@code vertice} in
+     *            {@code this}.
+     *
+     * @return the length of the edge between {@code vertice1} and
+     *         {@code vertice2}.
+     */
+    double edgeLength(int vertice1, int vertice2);
 
 }
