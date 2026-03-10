@@ -12,10 +12,54 @@ public interface Triangle extends TriangleKernel {
     double area();
 
     /**
+     * Determines if the triangle described by {@code this} is an acute triangle.
+     *
+     * @requires No two {@code vertice} in {@code this} should share the same
+     *           coordinates.
+     *
+     * @return {@code true} if {@code this} is an acute triangle, and false
+     *         otherwise.
+     */
+    boolean isAcute();
+
+    /**
+     * Determines if the triangle described by {@code this} is an obtuse triangle.
+     *
+     * @requires No two {@code vertice} in {@code this} should share the same
+     *           coordinates.
+     *
+     * @return {@code true} if {@code this} is an obtuse triangle, and false
+     *         otherwise.
+     */
+    boolean isObtuse();
+
+    /**
+     * Determines if the triangle described by {@code this} is a right triangle.
+     *
+     * @requires No two {@code vertice} in {@code this} should share the same
+     *           coordinates.
+     *
+     * @return {@code true} if {@code this} is a right triangle, and false
+     *         otherwise.
+     */
+    boolean isRight();
+
+    /**
+     * Determines if the triangle described by {@code this} is an equilateral triangle.
+     *
+     * @requires No two {@code vertice} in {@code this} should share the same
+     *           coordinates.
+     *
+     * @return {@code true} if {@code this} is an equilateral triangle, and false
+     *         otherwise.
+     */
+    boolean isEquilateral();
+
+    /**
      * Returns whether `this` is acute, obtuse, right, or equilateral in the
      * form of a {@code String}.
      *
-     * @requires No two {@code vertice} in {@code this} should have the same
+     * @requires No two {@code vertice} in {@code this} should share the same
      *           coordinates.
      *
      * @ensure triangleType = "acute" if {@code this} is an acute triangle.
@@ -29,5 +73,4 @@ public interface Triangle extends TriangleKernel {
      */
     String triangleType();
 
-    
 }
