@@ -13,3 +13,13 @@ the following form: YYYY.0M.0D.
 - Designed a `Triangle` component
 - Designed a `Data Table` component
 - Designed a `Projectile` component
+
+## [2026.03.10]
+
+### Added
+
+- Designed kernel and enhanced interfaces for `Triangle` component
+
+### Updated
+
+- Minor changes to `TriangleProofOfConcept`.
