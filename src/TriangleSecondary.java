@@ -22,6 +22,14 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double angleDegrees(int vertice1, int vertice2) {
 
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        int vertice3 = 6 - (vertice1 + vertice2);
+
+        double[] v1 = twoDimRep.getVertice(vertice1);
+        double[] v2 = twoDimRep.getVertice(vertice2);
+        double[] v3 = twoDimRep.getVertice(vertice3);
+
         return 0.0;
     }
 
@@ -159,8 +167,15 @@ public abstract class TriangleSecondary implements Triangle {
      */
     @Override
     public double edgeLength(int vertice1, int vertice2) {
+        Triangle twoDimRep = this.twoDimensionRepresentation();
 
-        return 0.0;
+        double[] v1 = twoDimRep.getVertice(vertice1);
+        double[] v2 = twoDimRep.getVertice(vertice2);
+
+        double edgeLen = Math.sqrt((v1[0] + v2[0]) * (v1[0] + v2[0])
+                + (v1[1] + v2[1]) * (v1[1] + v2[1]));
+
+        return edgeLen;
     }
 
     /**
@@ -175,5 +190,23 @@ public abstract class TriangleSecondary implements Triangle {
     public double perimeter() {
 
         return 0.0;
+    }
+
+    /**
+     * Creates a new {@code Triangle} in the same scale as {@code this} but
+     * rotated to fit 2 dimensions.
+     *
+     * @return new {@code Triangle} to represent {@code this} in 2 dimensions.
+     */
+    @Override
+    public Triangle twoDimensionRepresentation() {
+
+        /**
+         * Creating this method is by far the hardest problem. Solution will
+         * most likely require me to apply Linear Algebra concepts I haven't
+         * learned yet.
+         */
+
+        return null;
     }
 }
