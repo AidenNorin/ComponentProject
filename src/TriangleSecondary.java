@@ -241,7 +241,16 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double area() {
 
-        return 0.0;
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        double[] a = twoDimRep.getVertice(1);
+        double[] b = twoDimRep.getVertice(2);
+        double[] c = twoDimRep.getVertice(3);
+
+        double totalArea = 0.5 * ((a[1] * (b[2] - c[2]))
+                + (b[1] * (c[2] - a[2])) + (c[1] * (a[2] - b[2])));
+
+        return totalArea;
     }
 
     /**
@@ -283,8 +292,10 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double perimeter() {
 
-        double len = this.edgeLength(1, 2) + this.edgeLength(1, 3)
-                + this.edgeLength(2, 3);
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        double len = twoDimRep.edgeLength(1, 2) + twoDimRep.edgeLength(1, 3)
+                + twoDimRep.edgeLength(2, 3);
 
         return len;
     }
