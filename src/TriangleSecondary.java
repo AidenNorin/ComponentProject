@@ -26,11 +26,15 @@ public abstract class TriangleSecondary implements Triangle {
 
         int vertice3 = 6 - (vertice1 + vertice2);
 
-        double[] v1 = twoDimRep.getVertice(vertice1);
-        double[] v2 = twoDimRep.getVertice(vertice2);
-        double[] v3 = twoDimRep.getVertice(vertice3);
+        double a = twoDimRep.edgeLength(vertice1, vertice2);
+        double b = twoDimRep.edgeLength(vertice1, vertice3);
+        double c = twoDimRep.edgeLength(vertice2, vertice3);
 
-        return 0.0;
+        double angle = Math.atan(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+
+        angle = angle * (180 / Math.PI);
+
+        return angle;
     }
 
     /**
@@ -51,7 +55,17 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double angleRadians(int vertice1, int vertice2) {
 
-        return 0.0;
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        int vertice3 = 6 - (vertice1 + vertice2);
+
+        double a = twoDimRep.edgeLength(vertice1, vertice2);
+        double b = twoDimRep.edgeLength(vertice1, vertice3);
+        double c = twoDimRep.edgeLength(vertice2, vertice3);
+
+        double angle = Math.atan(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+
+        return angle;
     }
 
     /**
@@ -67,7 +81,24 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isAcute() {
 
-        return true;
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        double a = twoDimRep.angleDegrees(1, 2);
+        double b = twoDimRep.angleDegrees(2, 3);
+        double c = twoDimRep.angleDegrees(1, 3);
+
+        boolean acute = true;
+
+        if (a >= (Math.PI / 2.0) || a >= -(Math.PI / 2.0)) {
+            acute = false;
+        }
+        if (b >= (Math.PI / 2.0) || b >= -(Math.PI / 2.0)) {
+            acute = false;
+        }
+        if (c >= (Math.PI / 2.0) || c >= -(Math.PI / 2.0)) {
+            acute = false;
+        }
+        return acute;
     }
 
     /**
@@ -83,7 +114,24 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isObtuse() {
 
-        return true;
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        double a = twoDimRep.angleDegrees(1, 2);
+        double b = twoDimRep.angleDegrees(2, 3);
+        double c = twoDimRep.angleDegrees(1, 3);
+
+        boolean obtuse = true;
+
+        if (a <= (Math.PI / 2.0) || a <= -(Math.PI / 2.0)) {
+            obtuse = false;
+        }
+        if (b <= (Math.PI / 2.0) || b <= -(Math.PI / 2.0)) {
+            obtuse = false;
+        }
+        if (c <= (Math.PI / 2.0) || c <= -(Math.PI / 2.0)) {
+            obtuse = false;
+        }
+        return obtuse;
     }
 
     /**
@@ -98,7 +146,24 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isRight() {
 
-        return true;
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        double a = twoDimRep.angleDegrees(1, 2);
+        double b = twoDimRep.angleDegrees(2, 3);
+        double c = twoDimRep.angleDegrees(1, 3);
+
+        boolean right = true;
+
+        if (a == (Math.PI / 2.0) || a == -(Math.PI / 2.0)) {
+            right = false;
+        }
+        if (b == (Math.PI / 2.0) || b == -(Math.PI / 2.0)) {
+            right = false;
+        }
+        if (c == (Math.PI / 2.0) || c == -(Math.PI / 2.0)) {
+            right = false;
+        }
+        return right;
     }
 
     /**
@@ -114,7 +179,24 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isEquilateral() {
 
-        return true;
+        Triangle twoDimRep = this.twoDimensionRepresentation();
+
+        double a = twoDimRep.angleDegrees(1, 2);
+        double b = twoDimRep.angleDegrees(2, 3);
+        double c = twoDimRep.angleDegrees(1, 3);
+
+        boolean equilateral = true;
+
+        if (a == (Math.PI / 3.0) || a == -(Math.PI / 3.0)) {
+            equilateral = false;
+        }
+        if (b == (Math.PI / 3.0) || b == -(Math.PI / 3.0)) {
+            equilateral = false;
+        }
+        if (c == (Math.PI / 3.0) || c == -(Math.PI / 3.0)) {
+            equilateral = false;
+        }
+        return equilateral;
     }
 
     /**
@@ -135,6 +217,18 @@ public abstract class TriangleSecondary implements Triangle {
      */
     @Override
     public String triangleType() {
+
+        String type = "";
+
+        if (this.isAcute()) {
+            type = "acute";
+        } else if (this.isObtuse()) {
+            type = "obtuse";
+        } else if (this.isRight()) {
+            type = "right";
+        } else if (this.isEquilateral()) {
+            type = "equilateral";
+        }
 
         return null;
     }
@@ -189,7 +283,10 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double perimeter() {
 
-        return 0.0;
+        double len = this.edgeLength(1, 2) + this.edgeLength(1, 3)
+                + this.edgeLength(2, 3);
+
+        return len;
     }
 
     /**
