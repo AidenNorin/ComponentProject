@@ -315,10 +315,26 @@ public abstract class TriangleSecondary implements Triangle {
          * learned yet.
          */
 
+        double[] v1 = this.getVertice(1);
+        double[] v2 = this.getVertice(2);
+        double[] v3 = this.getVertice(3);
+
+        int dimensions = v1.length;
+
         /**
          * Step 1: translate triangle to have a vertice on the origin (Make
          * vertice 1 the origin).
          */
+
+        double[] v1Centered = new double[dimensions];
+        double[] v2Centered = new double[dimensions];
+        double[] v3Centered = new double[dimensions];
+
+        for (int i = 0; i < dimensions; i++) {
+            v1Centered[i] = 0;
+            v2Centered[i] = v2[i] - v1[i];
+            v3Centered[i] = v3[i] - v1[i];
+        }
 
         /**
          * Step 2: Using the two other vertice's (that hvae been translated)
@@ -326,9 +342,16 @@ public abstract class TriangleSecondary implements Triangle {
          * sits, find the normal vector to the plane.
          */
 
+        double[] normalVec = { 0.0, 0.0 }; // placeholder for now
+
         /**
          * Step 3: rotate plane to be only using x and y (all other indicies in
          * the array should be zero).
+         */
+
+        /**
+         * I'm planning on going my Linear Algebra Professor's office hours to
+         * see if I can get help with this problem.
          */
 
         return null;
