@@ -315,6 +315,50 @@ public abstract class TriangleSecondary implements Triangle {
          * learned yet.
          */
 
+        /**
+         * Step 1: translate triangle to have a vertice on the origin (Make
+         * vertice 1 the origin).
+         */
+
+        /**
+         * Step 2: Using the two other vertice's (that hvae been translated)
+         * that can now be treated as vectors on the plane which the triangle
+         * sits, find the normal vector to the plane.
+         */
+
+        /**
+         * Step 3: rotate plane to be only using x and y (all other indicies in
+         * the array should be zero).
+         */
+
         return null;
+    }
+
+    /**
+     * Converts {@code this} to a readable {@code String}.
+     *
+     * @return {@code String} representation of {@code this}.
+     */
+    @Override
+    public String toString() {
+
+        String str = "";
+
+        int dimensions = this.getVertice(1).length;
+        double[] v1 = this.getVertice(1);
+        double[] v2 = this.getVertice(2);
+        double[] v3 = this.getVertice(3);
+
+        for (int i = 1; i <= 3; i++) {
+            str += "Vertice " + i + ": (";
+            for (int j = 0; j < dimensions; j++) {
+                str += "" + v1[j] + ", ";
+                str += ")\n" + v2[j] + ", ";
+                str += ")\n" + v3[j] + ", ";
+            }
+        }
+        str += ")";
+
+        return str;
     }
 }
