@@ -142,6 +142,6 @@ public interface Triangle extends TriangleKernel {
      *
      * @return new {@code Triangle} to represent {@code this} in 2 dimensions.
      */
-    Triangle twoDimensionRepresentation();
+    double[] twoDimensionRepresentation();
 
 }

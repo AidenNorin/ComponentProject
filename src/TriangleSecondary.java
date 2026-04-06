@@ -22,17 +22,7 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double angleDegrees(int vertice1, int vertice2) {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
-
-        int vertice3 = 6 - (vertice1 + vertice2);
-
-        double a = twoDimRep.edgeLength(vertice1, vertice2);
-        double b = twoDimRep.edgeLength(vertice1, vertice3);
-        double c = twoDimRep.edgeLength(vertice2, vertice3);
-
-        double angle = Math.atan(((b * b) + (c * c) - (a * a)) / (2 * b * c));
-
-        angle = angle * (180 / Math.PI);
+        double angle = this.angleRadians(vertice1, vertice2) * (180 / Math.PI);
 
         return angle;
     }
@@ -55,13 +45,11 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double angleRadians(int vertice1, int vertice2) {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
-
         int vertice3 = 6 - (vertice1 + vertice2);
 
-        double a = twoDimRep.edgeLength(vertice1, vertice2);
-        double b = twoDimRep.edgeLength(vertice1, vertice3);
-        double c = twoDimRep.edgeLength(vertice2, vertice3);
+        double a = this.edgeLength(vertice1, vertice2);
+        double b = this.edgeLength(vertice1, vertice3);
+        double c = this.edgeLength(vertice2, vertice3);
 
         double angle = Math.atan(((b * b) + (c * c) - (a * a)) / (2 * b * c));
 
@@ -81,11 +69,9 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isAcute() {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
-
-        double a = twoDimRep.angleDegrees(1, 2);
-        double b = twoDimRep.angleDegrees(2, 3);
-        double c = twoDimRep.angleDegrees(1, 3);
+        double a = this.angleDegrees(1, 2);
+        double b = this.angleDegrees(2, 3);
+        double c = this.angleDegrees(1, 3);
 
         boolean acute = true;
 
@@ -114,11 +100,9 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isObtuse() {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
-
-        double a = twoDimRep.angleDegrees(1, 2);
-        double b = twoDimRep.angleDegrees(2, 3);
-        double c = twoDimRep.angleDegrees(1, 3);
+        double a = this.angleDegrees(1, 2);
+        double b = this.angleDegrees(2, 3);
+        double c = this.angleDegrees(1, 3);
 
         boolean obtuse = true;
 
@@ -146,11 +130,9 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isRight() {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
-
-        double a = twoDimRep.angleDegrees(1, 2);
-        double b = twoDimRep.angleDegrees(2, 3);
-        double c = twoDimRep.angleDegrees(1, 3);
+        double a = this.angleDegrees(1, 2);
+        double b = this.angleDegrees(2, 3);
+        double c = this.angleDegrees(1, 3);
 
         boolean right = true;
 
@@ -179,11 +161,9 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isEquilateral() {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
-
-        double a = twoDimRep.angleDegrees(1, 2);
-        double b = twoDimRep.angleDegrees(2, 3);
-        double c = twoDimRep.angleDegrees(1, 3);
+        double a = this.angleDegrees(1, 2);
+        double b = this.angleDegrees(2, 3);
+        double c = this.angleDegrees(1, 3);
 
         boolean equilateral = true;
 
@@ -241,11 +221,11 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double area() {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
+        double[] twoDimRep = this.twoDimensionRepresentation();
 
-        double[] a = twoDimRep.getVertice(1);
-        double[] b = twoDimRep.getVertice(2);
-        double[] c = twoDimRep.getVertice(3);
+        double[] a = { twoDimRep[0], twoDimRep[1] };
+        double[] b = { twoDimRep[2], twoDimRep[3] };
+        double[] c = { twoDimRep[4], twoDimRep[5] };
 
         double totalArea = 0.5 * ((a[1] * (b[2] - c[2]))
                 + (b[1] * (c[2] - a[2])) + (c[1] * (a[2] - b[2])));
@@ -270,13 +250,23 @@ public abstract class TriangleSecondary implements Triangle {
      */
     @Override
     public double edgeLength(int vertice1, int vertice2) {
-        Triangle twoDimRep = this.twoDimensionRepresentation();
+        double edgeLen = 0.0;
 
-        double[] v1 = twoDimRep.getVertice(vertice1);
-        double[] v2 = twoDimRep.getVertice(vertice2);
+        double[] v1 = this.getVertice(vertice1);
+        double[] v2 = this.getVertice(vertice2);
 
-        double edgeLen = Math.sqrt((v1[0] + v2[0]) * (v1[0] + v2[0])
-                + (v1[1] + v2[1]) * (v1[1] + v2[1]));
+        int dimensions = v1.length;
+
+        double[] edgeVec = new double[dimensions];
+
+        for (int i = 0; i < dimensions; i++) {
+            edgeVec[i] = Math.abs(v2[i] - v1[i]);
+        }
+
+        for (int i = 0; i < dimensions; i++) {
+            edgeLen += Math.pow(edgeVec[i], 2);
+        }
+        edgeLen = Math.sqrt(edgeLen);
 
         return edgeLen;
     }
@@ -292,22 +282,21 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double perimeter() {
 
-        Triangle twoDimRep = this.twoDimensionRepresentation();
-
-        double len = twoDimRep.edgeLength(1, 2) + twoDimRep.edgeLength(1, 3)
-                + twoDimRep.edgeLength(2, 3);
+        double len = this.edgeLength(1, 2) + this.edgeLength(1, 3)
+                + this.edgeLength(2, 3);
 
         return len;
     }
 
     /**
-     * Creates a new {@code Triangle} in the same scale as {@code this} but
-     * rotated to fit 2 dimensions.
+     * Creates a new {@code double[]} to represent the vertices of {@code this}
+     * while keeping the same scale.
      *
-     * @return new {@code Triangle} to represent {@code this} in 2 dimensions.
+     * @return new {@code double[]} to represent the vertices of {@code this} in
+     *         2 dimensions.
      */
     @Override
-    public Triangle twoDimensionRepresentation() {
+    public double[] twoDimensionRepresentation() {
 
         /**
          * Creating this method is by far the hardest problem. Solution will
@@ -326,35 +315,47 @@ public abstract class TriangleSecondary implements Triangle {
          * vertice 1 the origin).
          */
 
-        double[] v1Centered = new double[dimensions];
         double[] v2Centered = new double[dimensions];
         double[] v3Centered = new double[dimensions];
 
         for (int i = 0; i < dimensions; i++) {
-            v1Centered[i] = 0;
             v2Centered[i] = v2[i] - v1[i];
             v3Centered[i] = v3[i] - v1[i];
         }
 
         /**
-         * Step 2: Using the two other vertice's (that hvae been translated)
-         * that can now be treated as vectors on the plane which the triangle
-         * sits, find the normal vector to the plane.
+         * Step 2: find the lengths of 2 sides of the triangle.
          */
 
-        double[] normalVec = { 0.0, 0.0 }; // placeholder for now
+        double a = this.edgeLength(1, 2);
+        double b = this.edgeLength(1, 3);
 
         /**
-         * Step 3: rotate plane to be only using x and y (all other indicies in
-         * the array should be zero).
+         * Step 2: find angle Theta between these two sides.
          */
+
+        double dotProduct = 0.0; // The dot product between the two sides of the triangle
+
+        for (int i = 0; i < dimensions; i++) {
+            dotProduct += v2Centered[i] * v3Centered[i];
+        }
+
+        double theta = Math.acos(dotProduct / (a * b));
 
         /**
-         * I'm planning on going my Linear Algebra Professor's office hours to
-         * see if I can get help with this problem.
+         * Step 3: Enter new points into the triangle.
+         *
+         * point 1 = (0, 0)
+         *
+         * point 2 = (a, 0)
+         *
+         * point 3 = (b*cos(Theta), b*sin(Theta))
          */
 
-        return null;
+        double[] twoD = { 0.0, 0.0, a, 0.0, b * Math.cos(theta),
+                b * Math.sin(theta) };
+
+        return twoD;
     }
 
     /**
@@ -370,9 +371,9 @@ public abstract class TriangleSecondary implements Triangle {
         int dimensions = this.getVertice(1).length;
         double[] v1 = this.getVertice(1);
         double[] v2 = this.getVertice(2);
-        double[] v3 = this.getVertice(3);
+        double[] v3 = this.getVertice(THREE);
 
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= THREE; i++) {
             str += "Vertice " + i + ": (";
             for (int j = 0; j < dimensions; j++) {
                 str += "" + v1[j] + ", ";

@@ -33,3 +33,16 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Added `Triangle twoDimensionRepresentation()` to interface `Triangle`.
+
+## [2026.04.06]
+
+### Added
+
+- Finished Code for the `twoDimensionRepresentation()` method in `TriangleSecondary`.
+
+### Updated
+
+- Changed return type of `twoDimensionRepresentation()` from `Triangle` to `double[]` to avoid needing a constructor yet.
+- Fixed issues with methods that previously used `twoDimensionRepresentation()` in their implementation.
+- Changed implementation of `edgeLength()` to not require `twoDimensionRepresentation()` in its implementation.
+- Changed implementation of `twoDimensionRepresentation()` to use `edgeLength`.
