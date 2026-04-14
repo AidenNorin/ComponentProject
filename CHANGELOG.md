@@ -46,3 +46,11 @@ the following form: YYYY.0M.0D.
 - Fixed issues with methods that previously used `twoDimensionRepresentation()` in their implementation.
 - Changed implementation of `edgeLength()` to not require `twoDimensionRepresentation()` in its implementation.
 - Changed implementation of `twoDimensionRepresentation()` to use `edgeLength`.
+
+## [2026.04.14]
+
+### Added
+
+- Added `equals()` method to `TriangleSecondary` abstract class.
+- Added `hashCode()` method to `TriangleSecondary` abstract class.
+

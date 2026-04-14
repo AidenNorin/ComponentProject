@@ -385,4 +385,54 @@ public abstract class TriangleSecondary implements Triangle {
 
         return str;
     }
+
+    /**
+     * Checks whether {@code this} is equal to {@code t}.
+     *
+     * @param obj
+     *            {@code object} (cast to {@code Triangle}) being checked
+     *            against {@code this}.
+     * @return True if {@code this} and {@code t} are equal.
+     */
+    @Override
+    public boolean equals(Object obj) {
+
+        Triangle t = (Triangle) obj;
+
+        int dimensions = this.getVertice(1).length;
+        boolean isEqual = true;
+        if (dimensions != t.getVertice(1).length) {
+            isEqual = false;
+        }
+        for (int i = 1; isEqual && i <= THREE; i++) {
+            for (int j = 0; j < dimensions; j++) {
+                if (this.getVertice(i)[j] != t.getVertice(i)[j]) {
+                    isEqual = false;
+                }
+            }
+        }
+        return isEqual;
+    }
+
+    /**
+     * Generates an integer value to represent the values of the
+     * {@code triangle}.
+     *
+     * @return The final hashCode of {@code this}.
+     */
+    @Override
+    public int hashCode() {
+
+        int dimensions = this.getVertice(1).length;
+        int floorSum = 0;
+
+        for (int i = 0; i < THREE; i++) {
+            double[] currentVertice = this.getVertice(i);
+            for (int j = 0; j < dimensions; j++) {
+                floorSum += Math.floor(currentVertice[j]);
+            }
+        }
+
+        return floorSum;
+    }
 }
