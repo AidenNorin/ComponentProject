@@ -53,4 +53,4 @@ the following form: YYYY.0M.0D.
 
 - Added `equals()` method to `TriangleSecondary` abstract class.
 - Added `hashCode()` method to `TriangleSecondary` abstract class.
-
+- Designed kernel implementation for `Triangle1` component.
