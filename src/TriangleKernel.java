@@ -20,6 +20,30 @@ public interface TriangleKernel extends Standard<Triangle> {
     double HALF = 0.5;
 
     /**
+     * Creates a new representation of a 2 dimensional triangle in n dimensions.
+     *
+     * @param dimensions
+     *            The number of dimensions that the 2 dimensional triangle will
+     *            be described in.
+     * @return The new representation of a two dimensional triangle.
+     */
+    Triangle createNewRep(int dim);
+
+    /**
+     * Constructor for a {@code Triangle} in n dimensions.
+     *
+     * @param dimensions
+     *            The number of dimensions that the {@code Triangle} will be
+     *            described in.
+     */
+    void Triangle(int dimensions);
+
+    /**
+     * No argument constructor for a 2 dimensional triangle in 2 dimensions.
+     */
+    void Triangle();
+
+    /**
      * Adds a vertice to {@code vertices} in {@code this}.
      *
      * @requires numVertices <= 3.
