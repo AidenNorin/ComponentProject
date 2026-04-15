@@ -6,6 +6,10 @@
 public class Triangle1 {
 
     /**
+     * Private Members ------------------------------------------------
+     */
+
+    /**
      * Constant to equal to 3, as the number three is incredibly useful when
      * working with triangles.
      */
@@ -39,6 +43,10 @@ public class Triangle1 {
     }
 
     /**
+     * Constructors ----------------------------------------------------
+     */
+
+    /**
      * No argument Constructor for {@code Triangle}. Creates a 2d
      * {@code Triangle} in 2 dimensions.
      */
@@ -53,12 +61,88 @@ public class Triangle1 {
      * @param dim
      *            The number of dimensions {@code this} is represented in.
      *
-     * @requires {@code dim} >= 2.
+     * @requires {@code dim} >= 2
      */
     public Triangle1(int dim) {
         assert dim >= 2 : "Violation of: dimension >= 2";
         this.createNewRep(dim);
     }
+
+    /**
+     * Constructor for {@code Triangle}. Creates a Triangle with inputs for the
+     * coordinates of the {@code Triangle} in 2 dimensions.
+     *
+     * @param v1
+     *            Array holding the coordinates of the first vertex in
+     *            {@code this}.
+     * @param v2
+     *            Array holding the coordinates of the second vertex in
+     *            {@code this}.
+     * @param v3
+     *            Array holding the coordinates of the third vertex in
+     *            {@code this}.
+     *
+     * @requires |v1| == |v2| == |v3|
+     * @requires |v1| >= 2
+     */
+    public Triangle1(double[] v1, double[] v2, double[] v3) {
+        assert v1.length == v2.length && v1.length == v3.length : ""
+                + "Violation of: |v1| == |v2| == |v3|";
+        assert v1.length >= 2 : "Violation of: |v1| >= 2";
+        this.createNewRep(v1.length);
+
+        for (int i = 0; i < this.dimensions; i++) {
+            this.coordinates[i] = v1[i];
+            this.coordinates[i * 2] = v2[i];
+            this.coordinates[i * THREE] = v3[i];
+        }
+    }
+
+    /**
+     * Constructor for {@code Triangle}. Creates a Triangle with inputs for the
+     * coordinates of the {@code Triangle} in 2 dimensions.
+     *
+     * @param v1
+     *            Array holding the coordinates of the first vertex in
+     *            {@code this}.
+     * @param v2
+     *            Array holding the coordinates of the second vertex in
+     *            {@code this}.
+     * @requires |v1| == |v2|
+     * @requires |v1| >= 2
+     */
+    public Triangle1(double[] v1, double[] v2) {
+        assert v1.length == v2.length : "" + "Violation of: |v1| == |v2|";
+        assert v1.length >= 2 : "Violation of: |v1| >= 2";
+        this.createNewRep(v1.length);
+
+        for (int i = 0; i < this.dimensions; i++) {
+            this.coordinates[i] = v1[i];
+            this.coordinates[i * 2] = v2[i];
+        }
+    }
+
+    /**
+     * Constructor for {@code Triangle}. Creates a Triangle with inputs for the
+     * coordinates of the {@code Triangle} in 2 dimensions.
+     *
+     * @param v1
+     *            Array holding the coordinates of the first vertex in
+     *            {@code this}.
+     * @requires |v1| >= 2
+     */
+    public Triangle1(double[] v1) {
+        assert v1.length >= 2 : "Violation of: |v1| >= 2";
+        this.createNewRep(v1.length);
+
+        for (int i = 0; i < this.dimensions; i++) {
+            this.coordinates[i] = v1[i];
+        }
+    }
+
+    /**
+     * Kernel methods ---------------------------------------------------
+     */
 
     /**
      * Adds a vertice to {@code vertices} in {@code this}.
