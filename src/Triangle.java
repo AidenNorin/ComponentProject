@@ -129,12 +129,18 @@ public interface Triangle extends TriangleKernel {
     /**
      * Gives the perimeter of the triangle described by {@code this}.
      *
-     * @ensures
-     *      perimeter = edgeLength(0, 1) + edgeLength(1, 2) + edgeLength(2, 0).
+     * @ensures perimeter = edgeLength(0, 1) + edgeLength(1, 2) + edgeLength(2,
+     *          0).
      *
-     * @return
-     *      perimeter of the triangle described by {@code this}.
+     * @return perimeter of the triangle described by {@code this}.
      */
     double perimeter();
 
+    /**
+     * Creates a new {@code Triangle} in the same scale as {@code this} but
+     * rotated to fit 2 dimensions.
+     *
+     * @return new {@code Triangle} to represent {@code this} in 2 dimensions.
+     */
+    double[] twoDimensionRepresentation();
 }
