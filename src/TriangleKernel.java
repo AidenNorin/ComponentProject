@@ -20,22 +20,30 @@ public interface TriangleKernel extends Standard<Triangle> {
     double HALF = 0.5;
 
     /**
-     * Adds a vertice to {@code vertices} in {@code this}.
+     * Creates a new representation of a 2 dimensional triangle in n dimensions.
      *
-     * @requires numVertices <= 3.
+     * @param dim
+     *            The number of dimensions that the 2 dimensional triangle will
+     *            be described in.
+     * @return The new representation of a two dimensional triangle.
+     */
+    Triangle createNewRep(int dim);
+
+    /**
+     * Adds a vertice to {@code vertices} in {@code this}.
      *
      * @param coordinates
      *            coordinates of vertice to be added to {@code vertices} in
      *            {@code this}.
+     * @requires numVertices <= 3.
      */
     void addVertice(double[] coordinates);
 
     /**
      * Removes an arbitrary vertice from {@code vertices} in {@code this}.
      *
-     * @requires numVertices > 0.
-     *
      * @return The removed vertice from {@code vertices} in {@code this}.
+     * @requires numVertices > 0.
      */
     double[] removeAnyVertice();
 
@@ -43,13 +51,11 @@ public interface TriangleKernel extends Standard<Triangle> {
      * Removes a specific vertice from {@code vertices} in {@code this}
      * cooresponding to the index given from {@code vertice}.
      *
-     * @requires numVertices > 0
-     *
      * @param vertice
      *            {@code int} corresponding to the vertice to be removed.
      *
      * @return the coordinates of the removed {@code vertice} in {@code this}.
-     *
+     * @requires numVertices > 0
      */
     double[] removeVertice(int vertice);
 
