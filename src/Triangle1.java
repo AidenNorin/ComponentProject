@@ -3,7 +3,7 @@
  *
  * @author Aiden Norin
  */
-public class Triangle1 {
+public class Triangle1 extends TriangleSecondary {
 
     /**
      * Private Members ------------------------------------------------
@@ -40,6 +40,7 @@ public class Triangle1 {
     private void createNewRep(int dim) {
         this.dimensions = dim;
         this.coordinates = new double[this.dimensions * THREE];
+        this.numVertices = 0;
     }
 
     /**
@@ -66,6 +67,42 @@ public class Triangle1 {
     public Triangle1(int dim) {
         assert dim >= 2 : "Violation of: dimension >= 2";
         this.createNewRep(dim);
+    }
+
+    /*
+     * Standard methods -------------------------------------------------------
+     */
+
+    @Override
+    public final Triangle newInstance() {
+        try {
+            return this.getClass().getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new AssertionError(
+                    "Cannot construct object of type " + this.getClass());
+        }
+    }
+
+    @Override
+    public final void clear() {
+        this.createNewRep(this.dimensions);
+    }
+
+    @Override
+    public final void transferFrom(Triangle source) {
+        assert source != null : "Violation of: source is not null";
+        assert source != this : "Violation of: source is not this";
+        assert source instanceof Triangle1 : ""
+                + "Violation of: source is of dynamic type NaturalNumberExample";
+        /*
+         * This cast cannot fail since the assert above would have stopped
+         * execution in that case.
+         */
+        Triangle localSource = (Triangle1) source;
+        this.dimensions = localSource.dimensions;
+        this.coordinates = localSource.coordinates;
+        this.numVertices = localSource.numVertices;
+        localSource.createNewRep();
     }
 
     /**
@@ -153,6 +190,7 @@ public class Triangle1 {
      *
      * @requires numVertices <= 3.
      */
+    @Override
     public void addVertice(double[] coords) {
         assert coords.length != this.dimensions : ""
                 + "Violation of: coordinates.length != this.dimensions";
@@ -173,6 +211,7 @@ public class Triangle1 {
      *
      * @return The removed vertice from {@code vertices} in {@code this}.
      */
+    @Override
     public double[] removeAnyVertice() {
         double[] vertex = new double[this.dimensions];
 
@@ -199,6 +238,7 @@ public class Triangle1 {
      * @requires 1 <= vertice <= 3
      *
      */
+    @Override
     public double[] removeVertice(int vertice) {
         assert this.numVertices > 0 : "Violation of: numVertices > 0";
         assert vertice <= this.numVertices : "Violation of: vertice <= numVertices";
@@ -230,6 +270,7 @@ public class Triangle1 {
      *
      * @return number of vertices in {@code this}.
      */
+    @Override
     public int numVertices() {
         return this.numVertices;
     }
@@ -248,6 +289,7 @@ public class Triangle1 {
      *
      * @return The corresponding vertice to the {@code index}.
      */
+    @Override
     public double[] getVertice(int index) {
         double[] vertex = new double[this.dimensions];
 
@@ -256,6 +298,17 @@ public class Triangle1 {
         }
 
         return vertex;
+    }
+
+    /**
+     * Gives the number of dimensions that {@code this} is represented in.
+     *
+     * @return The number of dimensions of the triangle represented by
+     *         {@code this}.
+     */
+    @Override
+    public int dimensions() {
+        return this.dimensions;
     }
 
 }

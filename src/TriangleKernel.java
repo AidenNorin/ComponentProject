@@ -20,16 +20,6 @@ public interface TriangleKernel extends Standard<Triangle> {
     double HALF = 0.5;
 
     /**
-     * Creates a new representation of a 2 dimensional triangle in n dimensions.
-     *
-     * @param dim
-     *            The number of dimensions that the 2 dimensional triangle will
-     *            be described in.
-     * @return The new representation of a two dimensional triangle.
-     */
-    Triangle createNewRep(int dim);
-
-    /**
      * Adds a vertice to {@code vertices} in {@code this}.
      *
      * @param coordinates
@@ -83,4 +73,12 @@ public interface TriangleKernel extends Standard<Triangle> {
      * @return The corresponding vertice to the {@code index}.
      */
     double[] getVertice(int index);
+
+    /**
+     * Gives the number of dimensions that {@code this} is represented in.
+     *
+     * @return The number of dimensions of the triangle represented by
+     *         {@code this}.
+     */
+    int dimensions();
 }

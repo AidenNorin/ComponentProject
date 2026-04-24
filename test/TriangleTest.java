@@ -1,3 +1,7 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
 /**
  * JUnit test fixture for {@code Triangle1}'s constructor and kernel methods.
  *
@@ -74,8 +78,11 @@ public abstract class TriangleTest {
      *            the entries for the {@code Triangle}
      * @return the constructed {@code Triangle}
      *
+     * @requires {@code args}.length <= 3
+     *
      */
     private Triangle createFromArgsTest(double[]... args) {
+        assert args.length <= 3 : "Violation of args.length <= 3";
 
         Triangle t = (Triangle) this.constructorTest(args[0].length);
         for (int i = 0; i < args.length; i++) {
@@ -84,5 +91,76 @@ public abstract class TriangleTest {
 
         return t;
     }
+
+    /**
+     * Simultaneus testing for constructor, addVertice(), and getVertice().
+     */
+    @Test
+    public final void addVerticeTest() {
+        double[] d1 = { 0.0, 3.0 };
+        double[] d2 = { 4.0, 0.0 };
+        double[] d3 = { 0.0, 0.0 };
+
+        Triangle t1 = this.constructorTest(d1);
+        Triangle t2 = this.createFromArgsTest(d1, d2, d3);
+
+        t1.addVertice(d2);
+
+        assertEquals(d2, t1.getVertice(2));
+        assertEquals(t2, t1);
+    }
+
+    /**
+     * Test for for removeAny().
+     */
+    @Test
+    public final void removeAnyTest() {
+        double[] d1 = { 0.0, 3.0 };
+
+        Triangle t1 = this.createFromArgsTest(d1);
+        Triangle t2 = this.createFromArgsTest();
+
+        assertEquals(t2, t1);
+    }
+
+    /**
+     * KERNEL:
+     *
+     * addVertice DONE
+     *
+     * removeAny
+     *
+     * remove
+     *
+     * numVertices
+     *
+     * getVertice
+     *
+     *
+     *
+     * ENHANCED:
+     *
+     * angleDegrees
+     *
+     * angleRadians
+     *
+     * isAcute
+     *
+     * isObtuse
+     *
+     * isRight
+     *
+     * isEquilateral
+     *
+     * triangleType
+     *
+     * area
+     *
+     * edgeLength
+     *
+     * perimeter
+     *
+     * twoDimensionalRepresentation
+     */
 
 }
