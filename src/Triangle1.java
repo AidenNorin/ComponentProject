@@ -98,11 +98,11 @@ public class Triangle1 extends TriangleSecondary {
          * This cast cannot fail since the assert above would have stopped
          * execution in that case.
          */
-        Triangle localSource = (Triangle1) source;
+        Triangle1 localSource = (Triangle1) source;
         this.dimensions = localSource.dimensions;
         this.coordinates = localSource.coordinates;
         this.numVertices = localSource.numVertices;
-        localSource.createNewRep();
+        localSource.createNewRep(localSource.dimensions);
     }
 
     /**

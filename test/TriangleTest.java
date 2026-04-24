@@ -15,7 +15,7 @@ public abstract class TriangleTest {
      *
      * @return A new {@code Triangle} with no points in 2 dimensions.
      */
-    protected abstract Triangle1 constructorTest();
+    protected abstract Triangle constructorTest();
 
     /**
      * Creates a new {@code Triangle} with no points in a set number of
@@ -26,7 +26,7 @@ public abstract class TriangleTest {
      *
      * @return A new {@code Triangle} with no points in {@code dim} dimensions.
      */
-    protected abstract Triangle1 constructorTest(int dim);
+    protected abstract Triangle constructorTest(int dim);
 
     /**
      * Creates a new {@code Triangle} With 3 points in the given dimensions.
@@ -43,7 +43,7 @@ public abstract class TriangleTest {
      * @return A new {@code Triangle} with points {@code v1}, {@code v2}, and
      *         {@code v3}.
      */
-    protected abstract Triangle1 constructorTest(double[] v1, double[] v2,
+    protected abstract Triangle constructorTest(double[] v1, double[] v2,
             double[] v3);
 
     /**
@@ -57,7 +57,7 @@ public abstract class TriangleTest {
      *
      * @return A new {@code Triangle} with points {@code v1}, and {@code v2}.
      */
-    protected abstract Triangle1 constructorTest(double[] v1, double[] v2);
+    protected abstract Triangle constructorTest(double[] v1, double[] v2);
 
     /**
      * Creates a new {@code Triangle} With 1 point in the given dimensions.
@@ -67,7 +67,7 @@ public abstract class TriangleTest {
      *
      * @return A new {@code Triangle} with point {@code v1}.
      */
-    protected abstract Triangle1 constructorTest(double[] v1);
+    protected abstract Triangle constructorTest(double[] v1);
 
     /**
      *

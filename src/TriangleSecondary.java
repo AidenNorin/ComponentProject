@@ -1,3 +1,4 @@
+package components.geometry;
 
 /**
  * Implementation of secondary methods for {@code Triangle}.
