@@ -222,8 +222,8 @@ public class Triangle1 extends TriangleSecondary {
         for (int i = 0; i < this.dimensions; i++) {
             vertex[i] = this.coordinates[i
                     + (this.dimensions * (this.numVertices - 1))];
-            this.coordinates[i + (this.dimensions * this.numVertices)
-                    - 1] = 0.0;
+            this.coordinates[i
+                    + (this.dimensions * (this.numVertices - 1))] = 0.0;
         }
 
         this.numVertices--;
@@ -258,9 +258,11 @@ public class Triangle1 extends TriangleSecondary {
             this.coordinates[i + (this.dimensions * (vertice - 1))] = 0.0;
 
             if (vertice < this.numVertices) {
-                this.coordinates[i + (this.dimensions * vertice)
-                        - 1] = this.coordinates[i
+                this.coordinates[i + (this.dimensions
+                        * (vertice - 1))] = this.coordinates[i
                                 + (this.dimensions * (this.numVertices - 1))];
+                this.coordinates[i
+                        + (this.dimensions * (this.numVertices - 1))] = 0.0;
             }
 
         }

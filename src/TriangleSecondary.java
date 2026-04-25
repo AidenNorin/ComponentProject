@@ -372,7 +372,7 @@ public abstract class TriangleSecondary implements Triangle {
         double[] v2 = this.getVertice(2);
         double[] v3 = this.getVertice(THREE);
 
-        str += "\nVertice 1: (";
+        str += "\nVertex 1: (";
         for (int i = 0; i < this.dimensions(); i++) {
             if (i < this.dimensions() - 1) {
                 str += " " + v1[i] + ",";
@@ -380,7 +380,7 @@ public abstract class TriangleSecondary implements Triangle {
                 str += " " + v1[i];
             }
         }
-        str += " )\nVertice 2: (";
+        str += " )\nVertex 2: (";
         for (int i = 0; i < this.dimensions(); i++) {
             if (i < this.dimensions() - 1) {
                 str += " " + v2[i] + ",";
@@ -388,7 +388,7 @@ public abstract class TriangleSecondary implements Triangle {
                 str += " " + v2[i];
             }
         }
-        str += " )\nVertice 3: (";
+        str += " )\nVertex 3: (";
         for (int i = 0; i < this.dimensions(); i++) {
             if (i < this.dimensions() - 1) {
                 str += " " + v3[i] + ",";
@@ -396,7 +396,7 @@ public abstract class TriangleSecondary implements Triangle {
                 str += " " + v3[i];
             }
         }
-        str += " )";
+        str += " )\n";
         return str;
     }
 
