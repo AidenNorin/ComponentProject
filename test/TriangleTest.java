@@ -346,6 +346,482 @@ public abstract class TriangleTest {
     }
 
     /**
+     * Test for for angleDegrees().
+     */
+    @Test
+    public final void angleDegreesTest1() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleDegrees(1, 2);
+
+        assertEquals(30.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleDegrees().
+     */
+    @Test
+    public final void angleDegreesTest2() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleDegrees(2, 1);
+
+        assertEquals(30.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleDegrees().
+     */
+    @Test
+    public final void angleDegreesTest3() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleDegrees(1, 3);
+
+        assertEquals(60.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleDegrees().
+     */
+    @Test
+    public final void angleDegreesTest4() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleDegrees(3, 1);
+
+        assertEquals(60.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleDegrees().
+     */
+    @Test
+    public final void angleDegreesTest5() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleDegrees(2, 3);
+
+        assertEquals(90.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleDegrees().
+     */
+    @Test
+    public final void angleDegreesTest6() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleDegrees(3, 2);
+
+        assertEquals(90.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleRadians().
+     */
+    @Test
+    public final void angleRadiansTest1() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleRadians(1, 2);
+
+        assertEquals(Math.PI / 6.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleRadians().
+     */
+    @Test
+    public final void angleRadiansTest2() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleRadians(2, 1);
+
+        assertEquals(Math.PI / 6.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleRadians().
+     */
+    @Test
+    public final void angleRadiansTest3() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleRadians(1, 3);
+
+        assertEquals(Math.PI / 3.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleRadians().
+     */
+    @Test
+    public final void angleRadiansTest4() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleRadians(3, 1);
+
+        assertEquals(Math.PI / 3.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleRadians().
+     */
+    @Test
+    public final void angleRadiansTest5() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleRadians(2, 3);
+
+        assertEquals(Math.PI / 2.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for angleRadians().
+     */
+    @Test
+    public final void angleRadiansTest6() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        double theta = t.angleRadians(3, 2);
+
+        assertEquals(Math.PI / 2.0, theta, 0.00001);
+
+    }
+
+    /**
+     * Test for for isAcute().
+     */
+    @Test
+    public final void isAcuteTest1() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 50.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isAcute();
+
+        assertEquals(true, a);
+
+    }
+
+    /**
+     * Test for for isAcute().
+     */
+    @Test
+    public final void isAcuteTest2() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 1.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isAcute();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isAcute().
+     */
+    @Test
+    public final void isAcuteTest3() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isAcute();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isAcute().
+     */
+    @Test
+    public final void isAcuteTest4() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(3) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isAcute();
+
+        assertEquals(true, a);
+
+    }
+
+    /**
+     * Test for for isObtuse().
+     */
+    @Test
+    public final void isObtuseTest1() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 50.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isObtuse();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isObtuse().
+     */
+    @Test
+    public final void isObtuseTest2() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 1.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isObtuse();
+
+        assertEquals(true, a);
+
+    }
+
+    /**
+     * Test for for isObtuse().
+     */
+    @Test
+    public final void isObtuseTest3() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isObtuse();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isObtuse().
+     */
+    @Test
+    public final void isObtuseTest4() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(3) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isObtuse();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isRight().
+     */
+    @Test
+    public final void isRightTest1() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 50.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isRight();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isRight().
+     */
+    @Test
+    public final void isRightTest2() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 1.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isRight();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isRight().
+     */
+    @Test
+    public final void isRightTest3() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isRight();
+
+        assertEquals(true, a);
+
+    }
+
+    /**
+     * Test for for isRight().
+     */
+    @Test
+    public final void isRightTest4() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(3) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isRight();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isEquilateral().
+     */
+    @Test
+    public final void isEquilateralTest1() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 50.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isEquilateral();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isEquilateral().
+     */
+    @Test
+    public final void isEquilateralTest2() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 5.0, 1.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isEquilateral();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isEquilateral().
+     */
+    @Test
+    public final void isEquilateralTest3() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, Math.sqrt(3.0) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isEquilateral();
+
+        assertEquals(false, a);
+
+    }
+
+    /**
+     * Test for for isEquilateral().
+     */
+    @Test
+    public final void isEquilateralTest4() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(3) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isEquilateral();
+
+        assertEquals(true, a);
+
+    }
+
+    /**
      * KERNEL:
      *
      * addVertice DONE
@@ -356,23 +832,23 @@ public abstract class TriangleTest {
      *
      * numVertices DONE
      *
-     * getVertice
+     * getVertice DONE
      *
      *
      *
      * ENHANCED:
      *
-     * angleDegrees
+     * angleDegrees DONE
      *
-     * angleRadians
+     * angleRadians DONE
      *
-     * isAcute
+     * isAcute DONE
      *
-     * isObtuse
+     * isObtuse DONE
      *
-     * isRight
+     * isRight DONE
      *
-     * isEquilateral
+     * isEquilateral DONE
      *
      * triangleType
      *

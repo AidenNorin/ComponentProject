@@ -22,7 +22,8 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double angleDegrees(int vertice1, int vertice2) {
 
-        double angle = this.angleRadians(vertice1, vertice2) * (180 / Math.PI);
+        double angle = this.angleRadians(vertice1, vertice2)
+                * (180.0 / Math.PI);
 
         return angle;
     }
@@ -47,11 +48,11 @@ public abstract class TriangleSecondary implements Triangle {
 
         int vertice3 = 6 - (vertice1 + vertice2);
 
-        double a = this.edgeLength(vertice1, vertice2);
-        double b = this.edgeLength(vertice1, vertice3);
-        double c = this.edgeLength(vertice2, vertice3);
+        double c = this.edgeLength(vertice1, vertice2);
+        double a = this.edgeLength(vertice1, vertice3);
+        double b = this.edgeLength(vertice2, vertice3);
 
-        double angle = Math.atan(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+        double angle = Math.acos(((a * a) + (b * b) - (c * c)) / (2.0 * a * b));
 
         return angle;
     }
@@ -69,19 +70,19 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isAcute() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
         boolean acute = true;
 
-        if (a >= (Math.PI / 2.0) || a >= -(Math.PI / 2.0)) {
+        if (a >= (Math.PI / 2.0)) {
             acute = false;
         }
-        if (b >= (Math.PI / 2.0) || b >= -(Math.PI / 2.0)) {
+        if (b >= (Math.PI / 2.0)) {
             acute = false;
         }
-        if (c >= (Math.PI / 2.0) || c >= -(Math.PI / 2.0)) {
+        if (c >= (Math.PI / 2.0)) {
             acute = false;
         }
         return acute;
@@ -100,20 +101,14 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isObtuse() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
-        boolean obtuse = true;
+        boolean obtuse = false;
 
-        if (a <= (Math.PI / 2.0) || a <= -(Math.PI / 2.0)) {
-            obtuse = false;
-        }
-        if (b <= (Math.PI / 2.0) || b <= -(Math.PI / 2.0)) {
-            obtuse = false;
-        }
-        if (c <= (Math.PI / 2.0) || c <= -(Math.PI / 2.0)) {
-            obtuse = false;
+        if (a > (Math.PI / 2.0) || b > (Math.PI / 2.0) || c > (Math.PI / 2.0)) {
+            obtuse = true;
         }
         return obtuse;
     }
@@ -130,20 +125,15 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isRight() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
-        boolean right = true;
+        boolean right = false;
 
-        if (a == (Math.PI / 2.0) || a == -(Math.PI / 2.0)) {
-            right = false;
-        }
-        if (b == (Math.PI / 2.0) || b == -(Math.PI / 2.0)) {
-            right = false;
-        }
-        if (c == (Math.PI / 2.0) || c == -(Math.PI / 2.0)) {
-            right = false;
+        if (a == (Math.PI / 2.0) || b == (Math.PI / 2.0)
+                || c == (Math.PI / 2.0)) {
+            right = true;
         }
         return right;
     }
@@ -161,19 +151,22 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isEquilateral() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
         boolean equilateral = true;
 
-        if (a == (Math.PI / 3.0) || a == -(Math.PI / 3.0)) {
+        if (!(a > (Math.PI / 3.0) - 0.0000001
+                && a < (Math.PI / 3.0) + 0.0000001)) {
             equilateral = false;
         }
-        if (b == (Math.PI / 3.0) || b == -(Math.PI / 3.0)) {
+        if (!(b > (Math.PI / 3.0) - 0.0000001
+                && b < (Math.PI / 3.0) + 0.0000001)) {
             equilateral = false;
         }
-        if (c == (Math.PI / 3.0) || c == -(Math.PI / 3.0)) {
+        if (!(c > (Math.PI / 3.0) - 0.0000001
+                && c < (Math.PI / 3.0) + 0.0000001)) {
             equilateral = false;
         }
         return equilateral;
