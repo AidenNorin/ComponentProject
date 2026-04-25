@@ -1,4 +1,3 @@
-package components.geometry;
 
 /**
  * Implementation of secondary methods for {@code Triangle}.
@@ -369,21 +368,35 @@ public abstract class TriangleSecondary implements Triangle {
 
         String str = "";
 
-        int dimensions = this.getVertice(1).length;
         double[] v1 = this.getVertice(1);
         double[] v2 = this.getVertice(2);
         double[] v3 = this.getVertice(THREE);
 
-        for (int i = 1; i <= THREE; i++) {
-            str += "Vertice " + i + ": (";
-            for (int j = 0; j < dimensions; j++) {
-                str += "" + v1[j] + ", ";
-                str += ")\n" + v2[j] + ", ";
-                str += ")\n" + v3[j] + ", ";
+        str += "\nVertice 1: (";
+        for (int i = 0; i < this.dimensions(); i++) {
+            if (i < this.dimensions() - 1) {
+                str += " " + v1[i] + ",";
+            } else {
+                str += " " + v1[i];
             }
         }
-        str += ")";
-
+        str += " )\nVertice 2: (";
+        for (int i = 0; i < this.dimensions(); i++) {
+            if (i < this.dimensions() - 1) {
+                str += " " + v2[i] + ",";
+            } else {
+                str += " " + v2[i];
+            }
+        }
+        str += " )\nVertice 3: (";
+        for (int i = 0; i < this.dimensions(); i++) {
+            if (i < this.dimensions() - 1) {
+                str += " " + v3[i] + ",";
+            } else {
+                str += " " + v3[i];
+            }
+        }
+        str += " )";
         return str;
     }
 

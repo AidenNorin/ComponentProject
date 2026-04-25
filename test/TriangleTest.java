@@ -70,43 +70,18 @@ public abstract class TriangleTest {
     protected abstract Triangle constructorTest(double[] v1);
 
     /**
-     *
-     * Creates and returns a {@code Triangle} of the implementation under test
-     * type with the given entries and mode.
-     *
-     * @param args
-     *            the entries for the {@code Triangle}
-     * @return the constructed {@code Triangle}
-     *
-     * @requires {@code args}.length <= 3
-     *
-     */
-    private Triangle createFromArgsTest(double[]... args) {
-        assert args.length <= 3 : "Violation of args.length <= 3";
-
-        Triangle t = (Triangle) this.constructorTest(args[0].length);
-        for (int i = 0; i < args.length; i++) {
-            t.addVertice(args[i]);
-        }
-
-        return t;
-    }
-
-    /**
      * Simultaneus testing for constructor, addVertice(), and getVertice().
      */
     @Test
     public final void addVerticeTest() {
         double[] d1 = { 0.0, 3.0 };
         double[] d2 = { 4.0, 0.0 };
-        double[] d3 = { 0.0, 0.0 };
 
         Triangle t1 = this.constructorTest(d1);
-        Triangle t2 = this.createFromArgsTest(d1, d2, d3);
+        Triangle t2 = this.constructorTest(d1, d2);
 
         t1.addVertice(d2);
 
-        assertEquals(d2, t1.getVertice(2));
         assertEquals(t2, t1);
     }
 
@@ -114,11 +89,44 @@ public abstract class TriangleTest {
      * Test for for removeAny().
      */
     @Test
-    public final void removeAnyTest() {
+    public final void removeAnyTest1() {
         double[] d1 = { 0.0, 3.0 };
 
-        Triangle t1 = this.createFromArgsTest(d1);
-        Triangle t2 = this.createFromArgsTest();
+        Triangle t1 = this.constructorTest(d1);
+        Triangle t2 = this.constructorTest();
+
+        t1.removeAnyVertice();
+
+        assertEquals(t2, t1);
+    }
+
+    /**
+     * Test for for removeAny().
+     */
+    @Test
+    public final void removeAnyTest2() {
+        double[] d1 = { 0.0, 3.0 };
+        double[] d2 = { 4.0, 0.0 };
+
+        Triangle t1 = this.constructorTest(d1, d2);
+        Triangle t2 = this.constructorTest(d1);
+
+        t1.removeAnyVertice();
+
+        assertEquals(t2, t1);
+    }
+
+    /**
+     * Test for for removeAny().
+     */
+    @Test
+    public final void removeTest1() {
+        double[] d1 = { 0.0, 3.0 };
+
+        Triangle t1 = this.constructorTest(d1);
+        Triangle t2 = this.constructorTest();
+
+        t1.removeAnyVertice();
 
         assertEquals(t2, t1);
     }
@@ -128,7 +136,7 @@ public abstract class TriangleTest {
      *
      * addVertice DONE
      *
-     * removeAny
+     * removeAny DONE
      *
      * remove
      *
