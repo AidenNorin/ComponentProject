@@ -303,18 +303,23 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I believe so. The idea of building a fully usable product still slightly evades
+me as I don't have a clue how to create any app of any kind.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+Definitly, I had many times that there were math topics that I needed help with,
+or clarification on how to follow the OSU discipline. I would always talk to peers,
+and my professors to set myself back on the right track.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+It has changed a large amount. I enjoy it very much now, but less as a way to be
+creative, and more as a way to discover things I never knew while figuring out
+how to create what I want to make.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -322,29 +327,38 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I learned that I can go to any professor's office hours to get help with topics
+(I went to my Linear Algebra professors office hours for a method). I also
+learned that I can go to math stack exchange to get help with very difficult math problems.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Independent
+- Thorough
+- Quick to learn
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I believe that this project gave me the push I needed to go on a spree of coding
+independant projects that may be completely outside of the scope of what I believe
+I would be able to do.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I could always continue to create new projects. I could look to software development
+groups (open source teams come to mind first) to look for collaborative projects.
+I should stay in contact with Jeremy Grifski (hi if you're reading this) for CSE
+connections, my Statistics professor for help getting closer to data science,
+and my Linear Algebra professor as I find Linear Algebra incredibly interesting
+at the moment.
 
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
