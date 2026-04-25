@@ -199,11 +199,12 @@ public abstract class TriangleSecondary implements Triangle {
             type = "obtuse";
         } else if (this.isRight()) {
             type = "right";
-        } else if (this.isEquilateral()) {
+        }
+        if (this.isEquilateral()) {
             type = "equilateral";
         }
 
-        return null;
+        return type;
     }
 
     /**
@@ -220,8 +221,8 @@ public abstract class TriangleSecondary implements Triangle {
         double[] b = { twoDimRep[2], twoDimRep[3] };
         double[] c = { twoDimRep[4], twoDimRep[5] };
 
-        double totalArea = 0.5 * ((a[1] * (b[2] - c[2]))
-                + (b[1] * (c[2] - a[2])) + (c[1] * (a[2] - b[2])));
+        double totalArea = 0.5 * ((a[0] * (b[1] - c[1]))
+                + (b[0] * (c[1] - a[1])) + (c[0] * (a[1] - b[1])));
 
         return totalArea;
     }
