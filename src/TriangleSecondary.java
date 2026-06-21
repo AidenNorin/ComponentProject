@@ -139,7 +139,7 @@ public abstract class TriangleSecondary implements Triangle {
     }
 
     /**
-     * Determines if the triangle described by {@code this} is an equilaterl
+     * Determines if the triangle described by {@code this} is an equilateral
      * triangle.
      *
      * @requires No two {@code vertice} in {@code this} should share the same
@@ -173,6 +173,43 @@ public abstract class TriangleSecondary implements Triangle {
     }
 
     /**
+     * Determines if the triangle described by {@code this} is an isosceles
+     * triangle.
+     *
+     * @requires No two {@code vertice} in {@code this} should share the same
+     *           coordinates.
+     *
+     * @return {@code true} if {@code this} is an isosceles triangle, and false
+     *         otherwise.
+     */
+    public boolean isIsosceles() {
+
+        double a = this.edgeLength(1, 2);
+        double b = this.edgeLength(1, 2);
+        double c = this.edgeLength(1, 2);
+
+        boolean isosceles = false;
+
+        int count = 0;
+
+        if (a > b - 0.0000001 && a < b + 0.0000001) {
+            count++;
+        }
+        if (a > c - 0.0000001 && a < c + 0.0000001) {
+            count++;
+        }
+        if (b > c - 0.0000001 && b < c + 0.0000001) {
+            count++;
+        }
+
+        if (count == 2) {
+            isosceles = true;
+        }
+
+        return isosceles;
+    }
+
+    /**
      * Returns whether `this` is acute, obtuse, right, or equilateral in the
      * form of a {@code String}.
      *
@@ -199,6 +236,8 @@ public abstract class TriangleSecondary implements Triangle {
             type = "obtuse";
         } else if (this.isRight()) {
             type = "right";
+        } else if (this.isIsosceles()) {
+            type = "isosceles";
         }
         if (this.isEquilateral()) {
             type = "equilateral";
