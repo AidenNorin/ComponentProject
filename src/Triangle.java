@@ -85,6 +85,18 @@ public interface Triangle extends TriangleKernel {
     boolean isEquilateral();
 
     /**
+     * Determines if the triangle described by {@code this} is an isosceles
+     * triangle.
+     *
+     * @requires No two {@code vertice} in {@code this} should share the same
+     *           coordinates.
+     *
+     * @return {@code true} if {@code this} is an isosceles triangle, and false
+     *         otherwise.
+     */
+    boolean isIsosceles();
+
+    /**
      * Returns whether `this` is acute, obtuse, right, or equilateral in the
      * form of a {@code String}.
      *

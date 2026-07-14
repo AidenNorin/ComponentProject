@@ -182,27 +182,22 @@ public abstract class TriangleSecondary implements Triangle {
      * @return {@code true} if {@code this} is an isosceles triangle, and false
      *         otherwise.
      */
+    @Override
     public boolean isIsosceles() {
 
         double a = this.edgeLength(1, 2);
-        double b = this.edgeLength(1, 2);
-        double c = this.edgeLength(1, 2);
+        double b = this.edgeLength(1, 3);
+        double c = this.edgeLength(2, 3);
 
         boolean isosceles = false;
 
-        int count = 0;
-
-        if (a > b - 0.0000001 && a < b + 0.0000001) {
-            count++;
+        if (a >= b - 0.0000001 && a <= b + 0.0000001) {
+            isosceles = true;
         }
-        if (a > c - 0.0000001 && a < c + 0.0000001) {
-            count++;
+        if (a >= c - 0.0000001 && a <= c + 0.0000001) {
+            isosceles = true;
         }
-        if (b > c - 0.0000001 && b < c + 0.0000001) {
-            count++;
-        }
-
-        if (count == 2) {
+        if (b >= c - 0.0000001 && b <= c + 0.0000001) {
             isosceles = true;
         }
 
@@ -236,8 +231,6 @@ public abstract class TriangleSecondary implements Triangle {
             type = "obtuse";
         } else if (this.isRight()) {
             type = "right";
-        } else if (this.isIsosceles()) {
-            type = "isosceles";
         }
         if (this.isEquilateral()) {
             type = "equilateral";

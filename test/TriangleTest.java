@@ -86,7 +86,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for removeAny().
+     * Test for removeAny().
      */
     @Test
     public final void removeAnyTest1() {
@@ -101,7 +101,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for removeAny().
+     * Test for removeAny().
      */
     @Test
     public final void removeAnyTest2() {
@@ -117,7 +117,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for removeAny().
+     * Test for removeAny().
      */
     @Test
     public final void removeAnyTest3() {
@@ -134,7 +134,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for remove().
+     * Test for remove().
      */
     @Test
     public final void removeTest1() {
@@ -149,7 +149,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for remove().
+     * Test for remove().
      */
     @Test
     public final void removeTest2() {
@@ -165,7 +165,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for remove().
+     * Test for remove().
      */
     @Test
     public final void removeTest3() {
@@ -181,7 +181,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for remove().
+     * Test for remove().
      */
     @Test
     public final void removeTest4() {
@@ -198,7 +198,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for remove().
+     * Test for remove().
      */
     @Test
     public final void removeTest5() {
@@ -215,7 +215,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for remove().
+     * Test for remove().
      */
     @Test
     public final void removeTest7() {
@@ -232,7 +232,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for numVertices().
+     * Test for numVertices().
      */
     @Test
     public final void numVerticesTest1() {
@@ -244,7 +244,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for numVertices().
+     * Test for numVertices().
      */
     @Test
     public final void numVerticesTest2() {
@@ -258,7 +258,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for numVertices().
+     * Test for numVertices().
      */
     @Test
     public final void numVerticesTest3() {
@@ -273,7 +273,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for numVertices().
+     * Test for numVertices().
      */
     @Test
     public final void numVerticesTest4() {
@@ -289,7 +289,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for getVertice().
+     * Test for getVertice().
      */
     @Test
     public final void getVerticeTest1() {
@@ -307,7 +307,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for getVertice().
+     * Test for getVertice().
      */
     @Test
     public final void getVerticeTest2() {
@@ -325,7 +325,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for getVertice().
+     * Test for getVertice().
      */
     @Test
     public final void getVerticeTest3() {
@@ -343,7 +343,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleDegrees().
+     * Test for angleDegrees().
      */
     @Test
     public final void angleDegreesTest1() {
@@ -359,7 +359,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleDegrees().
+     * Test for angleDegrees().
      */
     @Test
     public final void angleDegreesTest2() {
@@ -375,7 +375,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleDegrees().
+     * Test for angleDegrees().
      */
     @Test
     public final void angleDegreesTest3() {
@@ -391,7 +391,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleDegrees().
+     * Test for angleDegrees().
      */
     @Test
     public final void angleDegreesTest4() {
@@ -407,7 +407,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleDegrees().
+     * Test for angleDegrees().
      */
     @Test
     public final void angleDegreesTest5() {
@@ -423,7 +423,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleDegrees().
+     * Test for angleDegrees().
      */
     @Test
     public final void angleDegreesTest6() {
@@ -439,7 +439,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleRadians().
+     * Test for angleRadians().
      */
     @Test
     public final void angleRadiansTest1() {
@@ -455,7 +455,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleRadians().
+     * Test for angleRadians().
      */
     @Test
     public final void angleRadiansTest2() {
@@ -471,7 +471,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleRadians().
+     * Test for angleRadians().
      */
     @Test
     public final void angleRadiansTest3() {
@@ -487,7 +487,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleRadians().
+     * Test for angleRadians().
      */
     @Test
     public final void angleRadiansTest4() {
@@ -503,7 +503,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleRadians().
+     * Test for angleRadians().
      */
     @Test
     public final void angleRadiansTest5() {
@@ -519,7 +519,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for angleRadians().
+     * Test for angleRadians().
      */
     @Test
     public final void angleRadiansTest6() {
@@ -535,7 +535,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isAcute().
+     * Test for isAcute().
      */
     @Test
     public final void isAcuteTest1() {
@@ -551,7 +551,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isAcute().
+     * Test for isAcute().
      */
     @Test
     public final void isAcuteTest2() {
@@ -567,7 +567,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isAcute().
+     * Test for isAcute().
      */
     @Test
     public final void isAcuteTest3() {
@@ -583,7 +583,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isAcute().
+     * Test for isAcute().
      */
     @Test
     public final void isAcuteTest4() {
@@ -599,7 +599,23 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isObtuse().
+     * Test for isAcute().
+     */
+    @Test
+    public final void isAcuteTest5() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(5) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isAcute();
+
+        assertEquals(true, a);
+    }
+
+    /**
+     * Test for isObtuse().
      */
     @Test
     public final void isObtuseTest1() {
@@ -615,7 +631,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isObtuse().
+     * Test for isObtuse().
      */
     @Test
     public final void isObtuseTest2() {
@@ -631,7 +647,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isObtuse().
+     * Test for isObtuse().
      */
     @Test
     public final void isObtuseTest3() {
@@ -647,7 +663,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isObtuse().
+     * Test for isObtuse().
      */
     @Test
     public final void isObtuseTest4() {
@@ -663,7 +679,23 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isRight().
+     * Test for isObtuse().
+     */
+    @Test
+    public final void isObtuseTest5() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(5) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isObtuse();
+
+        assertEquals(false, a);
+    }
+
+    /**
+     * Test for isRight().
      */
     @Test
     public final void isRightTest1() {
@@ -679,7 +711,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isRight().
+     * Test for isRight().
      */
     @Test
     public final void isRightTest2() {
@@ -695,7 +727,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isRight().
+     * Test for isRight().
      */
     @Test
     public final void isRightTest3() {
@@ -711,7 +743,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isRight().
+     * Test for isRight().
      */
     @Test
     public final void isRightTest4() {
@@ -727,7 +759,23 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isEquilateral().
+     * Test for isRight().
+     */
+    @Test
+    public final void isRightTest5() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(5) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isRight();
+
+        assertEquals(false, a);
+    }
+
+    /**
+     * Test for isEquilateral().
      */
     @Test
     public final void isEquilateralTest1() {
@@ -743,7 +791,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isEquilateral().
+     * Test for isEquilateral().
      */
     @Test
     public final void isEquilateralTest2() {
@@ -759,7 +807,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isEquilateral().
+     * Test for isEquilateral().
      */
     @Test
     public final void isEquilateralTest3() {
@@ -775,7 +823,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for isEquilateral().
+     * Test for isEquilateral().
      */
     @Test
     public final void isEquilateralTest4() {
@@ -791,7 +839,103 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for triangleType().
+     * Test for isEquilateral().
+     */
+    @Test
+    public final void isEquilateralTest5() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(5) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isEquilateral();
+
+        assertEquals(false, a);
+    }
+
+    /**
+     * Test for isIsosceles().
+     */
+    @Test
+    public final void isIsoscelesTest1() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 4.0, 50.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isIsosceles();
+
+        assertEquals(false, a);
+    }
+
+    /**
+     * Test for isIsosceles().
+     */
+    @Test
+    public final void isIsoscelesTest2() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 10.0, 0.0 };
+        double[] d3 = { 4.0, 1.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isIsosceles();
+
+        assertEquals(false, a);
+    }
+
+    /**
+     * Test for isIsosceles().
+     */
+    @Test
+    public final void isIsoscelesTest3() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 1.0, 0.0 };
+        double[] d3 = { 0.0, 3.0 };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isIsosceles();
+
+        assertEquals(false, a);
+    }
+
+    /**
+     * Test for isIsosceles().
+     */
+    @Test
+    public final void isIsoscelesTest4() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(3) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isIsosceles();
+
+        assertEquals(true, a);
+    }
+
+    /**
+     * Test for isIsosceles().
+     */
+    @Test
+    public final void isIsoscelesTest5() {
+        double[] d1 = { 0.0, 0.0 };
+        double[] d2 = { 2.0, 0.0 };
+        double[] d3 = { 1.0, Math.sqrt(5) };
+
+        Triangle t = this.constructorTest(d1, d2, d3);
+
+        boolean a = t.isIsosceles();
+
+        assertEquals(true, a);
+    }
+
+    /**
+     * Test for triangleType().
      */
     @Test
     public final void triangleTypeTest1() {
@@ -807,7 +951,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for triangleType().
+     * Test for triangleType().
      */
     @Test
     public final void triangleTypeTest2() {
@@ -823,7 +967,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for triangleType().
+     * Test for triangleType().
      */
     @Test
     public final void triangleTypeTest3() {
@@ -839,7 +983,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for triangleType().
+     * Test for triangleType().
      */
     @Test
     public final void triangleTypeTest4() {
@@ -855,7 +999,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for area().
+     * Test for area().
      */
     @Test
     public final void areaTest1() {
@@ -871,7 +1015,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for area().
+     * Test for area().
      */
     @Test
     public final void areaTest2() {
@@ -887,7 +1031,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for area().
+     * Test for area().
      */
     @Test
     public final void areaTest3() {
@@ -903,7 +1047,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest1() {
@@ -919,7 +1063,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest2() {
@@ -935,7 +1079,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest3() {
@@ -951,7 +1095,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest4() {
@@ -967,7 +1111,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest5() {
@@ -983,7 +1127,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest6() {
@@ -999,7 +1143,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest7() {
@@ -1015,7 +1159,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void edgeLengthTest8() {
@@ -1031,7 +1175,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for perimeter().
+     * Test for perimeter().
      */
     @Test
     public final void perimeterTest1() {
@@ -1047,7 +1191,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for perimeter().
+     * Test for perimeter().
      */
     @Test
     public final void perimeterTest2() {
@@ -1063,7 +1207,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void twoDimensionRepresentationTest1() {
@@ -1082,7 +1226,7 @@ public abstract class TriangleTest {
     }
 
     /**
-     * Test for for edgeLength().
+     * Test for edgeLength().
      */
     @Test
     public final void twoDimensionRepresentationTest2() {

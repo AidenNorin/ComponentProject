@@ -67,7 +67,18 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Fixed header for `Triangle1` to extend `TriangleSecondary`
-- Fixed all bugs in Kernel methods in `Triangle1`
-- Fixed all bugs in Enhanced methods in `TriangleSecondary`
+- Bug fixing in Kernel methods in `Triangle1`
+- Bug fixing in Enhanced methods in `TriangleSecondary`
 
+## [2026.07.14]
+
+### Added
+
+- Implemented `isIsosceles` method for `TriangleSecondary`
+- Designed test suite for `isIsosceles` method inside `TriangleSecondary`
+
+### Updated
+
+- Fixed JavaDoc explanations for all test fixtures in `TriangleTest` that contained "for for" in the header
+- Bug fixing in triangle type detection methods in `TriangleSecondary`
 
