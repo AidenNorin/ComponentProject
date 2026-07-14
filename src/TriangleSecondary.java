@@ -22,7 +22,8 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public double angleDegrees(int vertice1, int vertice2) {
 
-        double angle = this.angleRadians(vertice1, vertice2) * (180 / Math.PI);
+        double angle = this.angleRadians(vertice1, vertice2)
+                * (180.0 / Math.PI);
 
         return angle;
     }
@@ -47,11 +48,11 @@ public abstract class TriangleSecondary implements Triangle {
 
         int vertice3 = 6 - (vertice1 + vertice2);
 
-        double a = this.edgeLength(vertice1, vertice2);
-        double b = this.edgeLength(vertice1, vertice3);
-        double c = this.edgeLength(vertice2, vertice3);
+        double c = this.edgeLength(vertice1, vertice2);
+        double a = this.edgeLength(vertice1, vertice3);
+        double b = this.edgeLength(vertice2, vertice3);
 
-        double angle = Math.atan(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+        double angle = Math.acos(((a * a) + (b * b) - (c * c)) / (2.0 * a * b));
 
         return angle;
     }
@@ -69,19 +70,19 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isAcute() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
         boolean acute = true;
 
-        if (a >= (Math.PI / 2.0) || a >= -(Math.PI / 2.0)) {
+        if (a >= (Math.PI / 2.0)) {
             acute = false;
         }
-        if (b >= (Math.PI / 2.0) || b >= -(Math.PI / 2.0)) {
+        if (b >= (Math.PI / 2.0)) {
             acute = false;
         }
-        if (c >= (Math.PI / 2.0) || c >= -(Math.PI / 2.0)) {
+        if (c >= (Math.PI / 2.0)) {
             acute = false;
         }
         return acute;
@@ -100,20 +101,14 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isObtuse() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
-        boolean obtuse = true;
+        boolean obtuse = false;
 
-        if (a <= (Math.PI / 2.0) || a <= -(Math.PI / 2.0)) {
-            obtuse = false;
-        }
-        if (b <= (Math.PI / 2.0) || b <= -(Math.PI / 2.0)) {
-            obtuse = false;
-        }
-        if (c <= (Math.PI / 2.0) || c <= -(Math.PI / 2.0)) {
-            obtuse = false;
+        if (a > (Math.PI / 2.0) || b > (Math.PI / 2.0) || c > (Math.PI / 2.0)) {
+            obtuse = true;
         }
         return obtuse;
     }
@@ -130,26 +125,21 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isRight() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
-        boolean right = true;
+        boolean right = false;
 
-        if (a == (Math.PI / 2.0) || a == -(Math.PI / 2.0)) {
-            right = false;
-        }
-        if (b == (Math.PI / 2.0) || b == -(Math.PI / 2.0)) {
-            right = false;
-        }
-        if (c == (Math.PI / 2.0) || c == -(Math.PI / 2.0)) {
-            right = false;
+        if (a == (Math.PI / 2.0) || b == (Math.PI / 2.0)
+                || c == (Math.PI / 2.0)) {
+            right = true;
         }
         return right;
     }
 
     /**
-     * Determines if the triangle described by {@code this} is an equilaterl
+     * Determines if the triangle described by {@code this} is an equilateral
      * triangle.
      *
      * @requires No two {@code vertice} in {@code this} should share the same
@@ -161,22 +151,57 @@ public abstract class TriangleSecondary implements Triangle {
     @Override
     public boolean isEquilateral() {
 
-        double a = this.angleDegrees(1, 2);
-        double b = this.angleDegrees(2, 3);
-        double c = this.angleDegrees(1, 3);
+        double a = this.angleRadians(1, 2);
+        double b = this.angleRadians(2, 3);
+        double c = this.angleRadians(1, 3);
 
         boolean equilateral = true;
 
-        if (a == (Math.PI / 3.0) || a == -(Math.PI / 3.0)) {
+        if (!(a > (Math.PI / 3.0) - 0.0000001
+                && a < (Math.PI / 3.0) + 0.0000001)) {
             equilateral = false;
         }
-        if (b == (Math.PI / 3.0) || b == -(Math.PI / 3.0)) {
+        if (!(b > (Math.PI / 3.0) - 0.0000001
+                && b < (Math.PI / 3.0) + 0.0000001)) {
             equilateral = false;
         }
-        if (c == (Math.PI / 3.0) || c == -(Math.PI / 3.0)) {
+        if (!(c > (Math.PI / 3.0) - 0.0000001
+                && c < (Math.PI / 3.0) + 0.0000001)) {
             equilateral = false;
         }
         return equilateral;
+    }
+
+    /**
+     * Determines if the triangle described by {@code this} is an isosceles
+     * triangle.
+     *
+     * @requires No two {@code vertice} in {@code this} should share the same
+     *           coordinates.
+     *
+     * @return {@code true} if {@code this} is an isosceles triangle, and false
+     *         otherwise.
+     */
+    @Override
+    public boolean isIsosceles() {
+
+        double a = this.edgeLength(1, 2);
+        double b = this.edgeLength(1, 3);
+        double c = this.edgeLength(2, 3);
+
+        boolean isosceles = false;
+
+        if (a >= b - 0.0000001 && a <= b + 0.0000001) {
+            isosceles = true;
+        }
+        if (a >= c - 0.0000001 && a <= c + 0.0000001) {
+            isosceles = true;
+        }
+        if (b >= c - 0.0000001 && b <= c + 0.0000001) {
+            isosceles = true;
+        }
+
+        return isosceles;
     }
 
     /**
@@ -206,11 +231,12 @@ public abstract class TriangleSecondary implements Triangle {
             type = "obtuse";
         } else if (this.isRight()) {
             type = "right";
-        } else if (this.isEquilateral()) {
+        }
+        if (this.isEquilateral()) {
             type = "equilateral";
         }
 
-        return null;
+        return type;
     }
 
     /**
@@ -227,8 +253,8 @@ public abstract class TriangleSecondary implements Triangle {
         double[] b = { twoDimRep[2], twoDimRep[3] };
         double[] c = { twoDimRep[4], twoDimRep[5] };
 
-        double totalArea = 0.5 * ((a[1] * (b[2] - c[2]))
-                + (b[1] * (c[2] - a[2])) + (c[1] * (a[2] - b[2])));
+        double totalArea = 0.5 * ((a[0] * (b[1] - c[1]))
+                + (b[0] * (c[1] - a[1])) + (c[0] * (a[1] - b[1])));
 
         return totalArea;
     }
@@ -368,21 +394,35 @@ public abstract class TriangleSecondary implements Triangle {
 
         String str = "";
 
-        int dimensions = this.getVertice(1).length;
         double[] v1 = this.getVertice(1);
         double[] v2 = this.getVertice(2);
         double[] v3 = this.getVertice(THREE);
 
-        for (int i = 1; i <= THREE; i++) {
-            str += "Vertice " + i + ": (";
-            for (int j = 0; j < dimensions; j++) {
-                str += "" + v1[j] + ", ";
-                str += ")\n" + v2[j] + ", ";
-                str += ")\n" + v3[j] + ", ";
+        str += "\nVertex 1: (";
+        for (int i = 0; i < this.dimensions(); i++) {
+            if (i < this.dimensions() - 1) {
+                str += " " + v1[i] + ",";
+            } else {
+                str += " " + v1[i];
             }
         }
-        str += ")";
-
+        str += " )\nVertex 2: (";
+        for (int i = 0; i < this.dimensions(); i++) {
+            if (i < this.dimensions() - 1) {
+                str += " " + v2[i] + ",";
+            } else {
+                str += " " + v2[i];
+            }
+        }
+        str += " )\nVertex 3: (";
+        for (int i = 0; i < this.dimensions(); i++) {
+            if (i < this.dimensions() - 1) {
+                str += " " + v3[i] + ",";
+            } else {
+                str += " " + v3[i];
+            }
+        }
+        str += " )\n";
         return str;
     }
 

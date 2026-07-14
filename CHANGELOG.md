@@ -54,3 +54,31 @@ the following form: YYYY.0M.0D.
 - Added `equals()` method to `TriangleSecondary` abstract class.
 - Added `hashCode()` method to `TriangleSecondary` abstract class.
 - Designed kernel implementation for `Triangle1` component.
+
+## [2026.04.24]
+
+### Added
+
+- Designed test suite for `Triangle` component
+- Designed two different use cases for `Triangle` component
+- Designed case `ArrowHead` to help show a use for `Triangle`
+- Designed case `Tetrahedron` to help show a use for `Triangle`
+
+### Updated
+
+- Fixed header for `Triangle1` to extend `TriangleSecondary`
+- Bug fixing in Kernel methods in `Triangle1`
+- Bug fixing in Enhanced methods in `TriangleSecondary`
+
+## [2026.07.14]
+
+### Added
+
+- Implemented `isIsosceles` method for `TriangleSecondary`
+- Designed test suite for `isIsosceles` method inside `TriangleSecondary`
+
+### Updated
+
+- Fixed JavaDoc explanations for all test fixtures in `TriangleTest` that contained "for for" in the header
+- Bug fixing in triangle type detection methods in `TriangleSecondary`
+
